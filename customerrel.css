@@ -1,0 +1,160 @@
+
+.herobodytexts{
+font-family: Poppins;
+font-size: 25px;
+font-weight: 300;
+line-height: 48px;
+letter-spacing: 0em;
+text-align: left;
+color:  rgba(77, 77, 77, 1);
+padding-right: 6px;
+}
+
+.cacgenesis{
+    width: 70%;
+    background: rgba(253, 237, 237, 1);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px;
+    border-radius: 10px;
+    justify-content: center;
+    margin-bottom: 10px;
+  
+}
+
+
+body{
+    background-color: white !important;
+}
+
+.cacgenesistitle{
+font-family: Poppins;
+font-size: 20px;
+font-weight: 500;
+line-height: 30px;
+letter-spacing: 0em;
+text-align: start;
+color: rgba(68, 67, 67, 1);
+}
+
+.cacgenesisbody{
+    font-family: Poppins;
+font-size: 14px;
+font-weight: 300;
+line-height: 21px;
+letter-spacing: 0em;
+text-align: left;
+color: rgba(56, 55, 55, 1);
+}
+
+.textaligncenter{
+    text-align: center !important;
+}
+
+.isslservicesgridcards2{
+    padding: 20px;
+    display: grid;
+    grid-auto-rows: 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-gap: 40px;
+}
+
+.providers{
+    background: rgba(235, 235, 235, 0.15);
+    width: 100%;
+}
+
+
+.providesimg{
+    width: 100%;
+    height: 200px;
+    background-color: red;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.providesimg img{
+    width: 100%;
+    height: 100%;
+object-fit: cover;
+}
+
+.providestitle{
+    padding: 10px;
+    font-family: Poppins;
+    font-size: 19px;
+    font-weight: 600;
+    line-height: 36px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: rgba(58, 58, 133, 1);
+    padding-bottom: 0;
+
+}
+
+.providesbody{
+    padding: 10px; 
+    font-family: Poppins;
+font-size: 14px;
+font-weight: 300;
+line-height: 21px;
+letter-spacing: 0em;
+
+color:rgba(111, 108, 108, 1) ;
+}
+
+
+@media only screen and (max-width: 1000px) {
+    .herobodytexts{
+        font-family: Poppins;
+        font-size: 20px;
+        line-height: 28px;
+    }
+
+}
+
+
+@media only screen and (max-width: 900px) {
+    .isslservicesgridcards2{
+        padding: 20px;
+        display: grid;
+        grid-auto-rows: auto;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        grid-gap: 10px;
+    }
+    
+    .heroimagesection img{
+        width: 80%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: auto;
+        height: 50%;
+
+    
+    }
+
+
+    .herobodytexts{
+        font-family: Poppins;
+        font-size: 15px;
+        line-height: 28px;
+    }
+
+    .cacgenesis{
+        width: 90%;
+        background: rgba(253, 237, 237, 1);
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        padding: 20px;
+        border-radius: 10px;
+        justify-content: center;
+        margin-bottom: 10px;
+      
+    }
+    
+
+  }
+
