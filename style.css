@@ -35,9 +35,19 @@ a{
 
 /*header*/
 .header{
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    width: 100%;
 	background-color: var(--color-1);
 	padding:  0;
 	line-height: 1.5;
+}
+
+.add-shadow{
+    box-shadow: -1px 8px 5px -5px rgba(0,0,0,0.44);
+    -webkit-box-shadow: -1px 8px 5px -5px rgba(0,0,0,0.44);
+    -moz-box-shadow: -1px 8px 5px -5px rgba(0,0,0,0.44);
 }
 
 .header .logo,
