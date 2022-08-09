@@ -121,7 +121,7 @@ color:rgba(111, 108, 108, 1) ;
         display: grid;
         grid-auto-rows: auto;
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        grid-gap: 10px;
+        grid-gap: 30px;
     }
     
     .heroimagesection img{
