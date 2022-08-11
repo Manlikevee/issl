@@ -1,0 +1,384 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.isslsolutionscontainer{
+    margin-top: 50px;
+    width: 90%;
+    margin: auto;
+    padding: 3px;
+}
+.isslsolutionflex{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+    background: rgba(58, 58, 133, 1);
+}
+.isslsolutiontext{
+    width: 100%;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.isslsolutionimage{
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+.isslsolutionheader{
+    font-family: Poppins;
+font-size: 60px;
+font-weight: 600;
+line-height: 90px;
+letter-spacing: 0em;
+text-align: left;
+color: rgba(255, 255, 255, 1);
+
+}
+
+.isslsolutionbody{
+font-family: Poppins;
+font-size: 18px;
+font-weight: 300;
+line-height: 30px;
+letter-spacing: 0em;
+text-align: left;
+color: rgba(255, 255, 255, 1);
+}
+
+.isslsolutionimage img{
+width: 60%;
+height: 100%;
+object-fit: cover;
+margin: auto;
+}
+
+.soughtsol{
+    width: 100%;
+    padding-top:40px ;
+}
+
+.soughtsoltitle{
+font-family: Poppins;
+font-size: 30px;
+font-weight: 400;
+line-height: 48px;
+letter-spacing: 0em;
+text-align: center;
+color: rgba(115, 114, 114, 1);
+
+}
+
+.slidercontents{
+    padding: 10px;
+    display: flex;
+    gap: 4px;
+width: fit-content;
+margin: auto;
+}
+
+.slidercontents li {
+
+ background: rgba(251, 251, 251, 1);
+    height: auto;
+    width: 159px;
+    border-radius: 33.57005310058594px;
+    padding: 15px;
+}
+
+.activetab{
+
+
+
+    width: fit-content;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.tab-slider--nav {
+    width: 100%;
+    float: left;
+    margin-bottom: 20px;
+  } */
+  
+  .tab-slider--tabs {
+    display: block;
+    float: left;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    position: relative;
+    border-radius: 35px;
+    overflow: hidden;
+    background: #fff;
+    height: 35px;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+  }
+   .tab-slider--tabs:after {
+    content: "";
+    width: fit-content;
+    background: #345F90;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: all 250ms ease-in-out;
+    border-radius: 35px;
+  } 
+  .tab-slider--tabs.slide:after {
+    left: 50%;
+  } 
+  
+  .tab-slider--trigger {
+    font-size: 12px;
+    line-height: 1;
+    font-weight: bold;
+    color: #345F90;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 11px 20px;
+    position: relative;
+    z-index: 2;
+    cursor: pointer;
+    display: inline-block;
+    transition: color 250ms ease-in-out;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+  } 
+ .tab-slider--trigger.active {
+    color: #fff;
+    background: rgba(235, 50, 56, 1);
+
+  }
+  
+  .tab-slider--body {
+    margin-bottom: 20px;
+  }
+
+
+  .tab-slider--container{
+    width: 1010px;
+    margin: auto;
+  }
+
+.Bankingsolution{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 100%;
+}
+
+.bankingsolutiondiv{
+    width: 100%;
+    margin-top: 40px;
+    display: flex;
+    gap: 12px;
+
+}
+
+
+
+.bankingsolimg{
+    width: 60%;
+}
+
+.bankingsoltxt{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    justify-content: center;
+}
+
+.introtext{
+ padding-top: 20px;
+ font-family: Poppins;
+font-size: 16px;
+font-weight: 300;
+line-height: 24px;
+letter-spacing: 0em;
+text-align: justified;
+color: rgba(89, 89, 89, 1);
+}
+
+.intro2heading{
+    font-family: Poppins;
+font-size: 23px;
+font-weight: 600;
+line-height: 36px;
+letter-spacing: 0em;
+text-align: justified;
+margin-bottom: 6px;
+margin-top: 10px;
+color: rgba(58, 58, 133, 1);
+
+}
+
+.intro2body{
+    font-family: Poppins;
+font-size: 15px;
+font-weight: 300;
+line-height: 24px;
+letter-spacing: 0em;
+text-align: justified;
+color: rgba(89, 89, 89, 1);
+
+}
+.sliptside1{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.splitside2{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 24px; 
+}
+
+.splitsidebody{
+    font-family: Poppins;
+font-size: 16px;
+font-weight: 300;
+line-height: 24px;
+letter-spacing: 0em;
+text-align: inherit;
+color: rgba(89, 89, 89, 1);
+
+}
+
+
+.splitsideheader{
+    font-family: Poppins;
+    font-size: 23px;
+    font-weight: 600;
+    line-height: 36px;
+    letter-spacing: 0em;
+    text-align: justified;
+    color: rgba(58, 58, 133, 1);
+    
+    }
+.corebanking{
+    margin-top: 50px;
+    width: 100%;
+    padding: 20px;
+    background: rgba(20, 20, 255, 0.18);
+    border-radius: 20px;
+    margin-bottom: 30px;
+}
+
+    .corebankingsplitdiv{
+        padding: 2px;
+        display: flex;
+        gap: 20px;
+    }
+
+    .desm{
+        padding-top: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+     
+    }
+
+@media only screen and (max-width: 1200px) {
+    .tab-slider--container{
+        width: 100%;
+      }
+      .slidercontents {
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        width: fit-content;
+        margin: auto;
+    }
+    .corebankingsplitdiv{
+        flex-direction: column;
+    }
+    .corebankingsplitdiv {
+        padding: 30px;
+        display: flex;
+        gap: 20px;
+    }
+    .corebanking {
+    margin-top: 50px;
+    width: 100%;
+    padding: 0px;
+    background: rgba(20, 20, 255, 0.18);
+    border-radius: 20px;
+    margin-bottom: 30px;
+}
+}
+
+@media only screen and (max-width: 1090px) {
+    .bankingsolutiondiv{
+        flex-direction: column;
+    }
+    .tab-slider--container{
+        width: 100%;
+      }
+
+    .bankingsolimg{
+        margin: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .isslsolutionflex{
+        flex-direction: column;
+    }
+    .isslsolutiontext{
+        width: 100%;
+    }
+
+    .isslsolutionimage{
+        width: 100%;
+    }
+
+    .isslsolutionimage img{
+        width: 50%;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .isslsolutionheader{
+width: 100%;
+text-align: center;
+    }
+
+    .isslsolutionbody{
+
+        text-align: center;
+    }
+
+    .isslsolutiontext{
+        padding: 0;
+    } 
+}
+
+@media only screen and (max-width: 690px) {
+    .isslsolutionheader {
+        font-size: 34px;
+    }
+}
