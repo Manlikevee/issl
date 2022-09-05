@@ -1,0 +1,925 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="solutions.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="row align-items-center justify-content-between">
+                <div class="logo">
+                   <a href="#">
+                
+                    <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <rect width="60" height="60" fill="url(#pattern0)"/>
+                        <defs>
+                        <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
+                        <use xlink:href="#image0_1964_1593" transform="scale(0.00444444)"/>
+                        </pattern>
+                        <image id="image0_1964_1593" width="225" height="225" xlink:href="data:image/png;base64,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"/>
+                        </defs>
+                        </svg>
+                        
+                   </a>
+                </div>
+                <button type="button" class="nav-toggler">
+                   <span></span>
+                </button>
+                <nav class="nav">
+                   <ul>
+                      <li><a href="index.html" class="active">Home</a></li>
+                      <li><a href="index2.html" >Company</a></li>
+                      <li><a href="#">Services</a></li>
+                      <li><a href="#">Products</a></li>
+                      <li><a href="#">Contact</a></li>
+                   </ul>
+                </nav>
+            </div>
+        </div>
+     </header>
+     <div class="isslsolutionflex">
+        <div class="isslsolutiontext">
+            <div class="isslsolutionheader">
+                Re-think applications;
+                 <p>
+                    Re-imagine business
+                 </p> 
+            </div>
+            <div class="isslsolutionbody">
+                We support brand and products to stand out in this modern age.
+            </div>
+        </div>
+        <div class="isslsolutionimage">
+<!-- <img src="business-3d-businessman-with-a-coffee-mug-got-a-new-idea 2.png" alt=""> -->
+        </div>
+    </div>
+    <div class="isslsolutionscontainer">
+        <div class="soughtsol">
+
+
+<div class="tabslider2">
+    <div class="slidercontents">
+
+    </div>
+</div>
+
+            <div class="tab-slider--nav">
+                <ul class="tab-slider--tabs slidercontents">
+
+                    <li class="tab-slider--trigger active"  rel="tab1">Banking Solution</li>
+                    <li class="tab-slider--trigger "  rel="tab2">Biometrics</li>
+                    <li class="tab-slider--trigger "  rel="tab3">CRM Solution</li>
+                    <li class="tab-slider--trigger "  rel="tab4"> Financial Services</li>
+                    <li class="tab-slider--trigger "  rel="tab5">Authentication</li>
+
+
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="tab-slider--container">
+            <div id="tab1" class="tab-slider--body">
+
+                <div class="Bankingsolution">
+                    <div class="bankingsolutiondiv">
+                        <div class="bankingsoltxt">
+                            <div class="intro2">
+                                <div class="intro2heading">Banking system revolution</div>
+                                <div class="intro2body">From internet banking and mobile banking to real-time core banking and Know Your Customer (KYC) solutions, Africa is witnessing a banking system revolution. Today, competitive banks need to offer a combination of online banking and branch solutions that do everything from allowing a customer to send a mobile payment, to checking the verification of a new customer through KYC rules and regulations.
+                
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bankingsolimg">
+                            <img src="business-3d-e-wallet-in-a-phone-with-bank-card-stack-of-coins-and-leather-wallet 1.png" alt="">
+                        </div>
+                
+                    </div>
+                
+                    <div class="vixi">
+                        ISSL offers a combination of online banking and branch solutions that do everything from allowing a customer to send a mobile payment, to checking the verification of a new customer through KYC rules and regulations.
+                
+                    </div>
+                
+                    <div class="corebanking">
+                        <br>
+                    
+                        <div class="corebankingsplitdiv">
+                            <div class="sliptside1">
+                                <div class="icicon">
+                                  
+<svg width="57" height="61" viewBox="0 0 57 61" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <g clip-path="url(#clip0_1966_1669)">
+    <path d="M10.3475 28.6024L30.8486 16.8249L51.3497 28.6024C51.6728 28.7714 52.0488 28.8091 52.399 28.7075C52.7492 28.6059 53.0467 28.3729 53.2292 28.0571C53.4117 27.7414 53.4651 27.3674 53.3783 27.0132C53.2916 26.659 53.0713 26.352 52.7636 26.1564L30.8486 13.5588L8.93368 26.1564C8.76471 26.2448 8.61537 26.3664 8.49464 26.514C8.37391 26.6616 8.28429 26.8321 8.23116 27.0153C8.17803 27.1984 8.16249 27.3904 8.18549 27.5797C8.20848 27.769 8.26953 27.9517 8.36496 28.1168C8.46038 28.2819 8.58822 28.4259 8.74078 28.5403C8.89333 28.6547 9.06745 28.7371 9.25266 28.7825C9.43788 28.8278 9.63035 28.8353 9.81851 28.8043C10.0067 28.7734 10.1866 28.7047 10.3475 28.6024Z" fill="#3A3A85"/>
+    <path d="M11.0544 46.1909C11.0544 46.5659 11.2034 46.9255 11.4686 47.1906C11.7337 47.4558 12.0933 47.6048 12.4683 47.6048H49.2289C49.6039 47.6048 49.9635 47.4558 50.2286 47.1906C50.4938 46.9255 50.6427 46.5659 50.6427 46.1909C50.6427 45.8159 50.4938 45.4563 50.2286 45.1911C49.9635 44.926 49.6039 44.777 49.2289 44.777H44.9873V34.3568H42.1595V44.777H32.2625V34.3568H29.4347V44.777H19.5377V34.3568H16.7099V44.777H12.4683C12.0933 44.777 11.7337 44.926 11.4686 45.1911C11.2034 45.4563 11.0544 45.8159 11.0544 46.1909V46.1909Z" fill="#3A3A85"/>
+    <path d="M12.4967 29.2246H49.2573V32.0523H12.4967V29.2246Z" fill="#3A3A85"/>
+    <path d="M52.0567 50.4326H9.64067C9.26569 50.4326 8.90607 50.5816 8.64092 50.8467C8.37577 51.1119 8.22681 51.4715 8.22681 51.8465C8.22681 52.2215 8.37577 52.5811 8.64092 52.8462C8.90607 53.1114 9.26569 53.2604 9.64067 53.2604H52.0567C52.4317 53.2604 52.7913 53.1114 53.0565 52.8462C53.3216 52.5811 53.4706 52.2215 53.4706 51.8465C53.4706 51.4715 53.3216 51.1119 53.0565 50.8467C52.7913 50.5816 52.4317 50.4326 52.0567 50.4326Z" fill="#3A3A85"/>
+    <path d="M36.7162 25.803H41.2547L31.7677 20.3455C31.5957 20.2462 31.4007 20.194 31.2021 20.194C31.0036 20.194 30.8085 20.2462 30.6366 20.3455L21.1354 25.803H25.6739L31.188 22.636L36.7162 25.803Z" fill="#3A3A85"/>
+    </g>
+    <circle cx="17.0633" cy="16.5434" r="16.2137" fill="#3A3A85" fill-opacity="0.15"/>
+    <defs>
+    <clipPath id="clip0_1966_1669">
+    <rect width="50.8992" height="50.8992" fill="white" transform="translate(5.39905 9.43048)"/>
+    </clipPath>
+    </defs>
+    </svg>
+      
+                                </div>
+                                <div class="splitsideheader">
+                                    Core Banking
+                                </div>
+                                <div class="splitsidebody">
+                                    ISSL’s core banking solution, IntegraBanking Products, will allow your customers to do just that. What’s more, IntegraBanking will integrate your accounting, transaction handling, customer service and management reporting into one system, making it easier and faster for your employees to handle your customers’ requests. Becoming a more efficient bank has never been so easy!
+                
+                           
+                                    <div class="requestdet">
+                                        Request Details  <span> ></span> 
+                                    </div>
+                
+                                </div>
+                            </div>
+                            <div class="splitside2">
+                                <div class="icicon">
+                
+                <svg width="56" height="61" viewBox="0 0 56 61" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="16.2137" cy="16.5434" r="16.2137" fill="#3A3A85" fill-opacity="0.15"/>
+                <path d="M26.8176 32.2291C26.8176 32.8558 26.6942 33.4763 26.4544 34.0552C26.2146 34.6342 25.8631 35.1602 25.42 35.6033C24.9769 36.0464 24.4509 36.3979 23.8719 36.6377C23.293 36.8775 22.6725 37.0009 22.0458 37.0009C21.4192 37.0009 20.7987 36.8775 20.2197 36.6377C19.6408 36.3979 19.1148 36.0464 18.6717 35.6033C18.2286 35.1602 17.8771 34.6342 17.6373 34.0552C17.3975 33.4763 17.274 32.8558 17.274 32.2291C17.274 30.9636 17.7768 29.7498 18.6717 28.8549C19.5665 27.9601 20.7803 27.4573 22.0458 27.4573C23.3114 27.4573 24.5251 27.9601 25.42 28.8549C26.3149 29.7498 26.8176 30.9636 26.8176 32.2291ZM24.1666 32.2291C24.1666 31.6666 23.9432 31.1272 23.5455 30.7295C23.1477 30.3318 22.6083 30.1083 22.0458 30.1083C21.4834 30.1083 20.9439 30.3318 20.5462 30.7295C20.1485 31.1272 19.925 31.6666 19.925 32.2291C19.925 32.7916 20.1485 33.331 20.5462 33.7288C20.9439 34.1265 21.4834 34.3499 22.0458 34.3499C22.6083 34.3499 23.1477 34.1265 23.5455 33.7288C23.9432 33.331 24.1666 32.7916 24.1666 32.2291ZM22.0458 48.6653C23.3114 48.6653 24.5251 48.1626 25.42 47.2677C26.3149 46.3728 26.8176 45.1591 26.8176 43.8935C26.8176 42.628 26.3149 41.4142 25.42 40.5194C24.5251 39.6245 23.3114 39.1217 22.0458 39.1217C20.7803 39.1217 19.5665 39.6245 18.6717 40.5194C17.7768 41.4142 17.274 42.628 17.274 43.8935C17.274 45.1591 17.7768 46.3728 18.6717 47.2677C19.5665 48.1626 20.7803 48.6653 22.0458 48.6653ZM22.0458 46.0143C21.4834 46.0143 20.9439 45.7909 20.5462 45.3932C20.1485 44.9954 19.925 44.456 19.925 43.8935C19.925 43.3311 20.1485 42.7916 20.5462 42.3939C20.9439 41.9962 21.4834 41.7727 22.0458 41.7727C22.6083 41.7727 23.1477 41.9962 23.5455 42.3939C23.9432 42.7916 24.1666 43.3311 24.1666 43.8935C24.1666 44.456 23.9432 44.9954 23.5455 45.3932C23.1477 45.7909 22.6083 46.0143 22.0458 46.0143ZM18.5995 22.1553C18.248 22.1553 17.9108 22.295 17.6623 22.5435C17.4137 22.7921 17.274 23.1293 17.274 23.4808C17.274 23.8324 17.4137 24.1695 17.6623 24.4181C17.9108 24.6667 18.248 24.8063 18.5995 24.8063H41.3981C41.7497 24.8063 42.0868 24.6667 42.3354 24.4181C42.584 24.1695 42.7236 23.8324 42.7236 23.4808C42.7236 23.1293 42.584 22.7921 42.3354 22.5435C42.0868 22.295 41.7497 22.1553 41.3981 22.1553H18.5995ZM28.9384 32.4942C28.9384 31.7625 29.5323 31.1687 30.2639 31.1687H41.3981C41.7497 31.1687 42.0868 31.3084 42.3354 31.5569C42.584 31.8055 42.7236 32.1427 42.7236 32.4942C42.7236 32.8458 42.584 33.1829 42.3354 33.4315C42.0868 33.6801 41.7497 33.8197 41.3981 33.8197H30.2639C29.5323 33.8197 28.9384 33.2259 28.9384 32.4942ZM30.2639 42.3029C29.9124 42.3029 29.5752 42.4426 29.3267 42.6912C29.0781 42.9397 28.9384 43.2769 28.9384 43.6284C28.9384 43.98 29.0781 44.3171 29.3267 44.5657C29.5752 44.8143 29.9124 44.9539 30.2639 44.9539H41.3981C41.7497 44.9539 42.0868 44.8143 42.3354 44.5657C42.584 44.3171 42.7236 43.98 42.7236 43.6284C42.7236 43.2769 42.584 42.9397 42.3354 42.6912C42.0868 42.4426 41.7497 42.3029 41.3981 42.3029H30.2639ZM17.5391 15.7929C15.7814 15.7929 14.0957 16.4912 12.8528 17.7341C11.6099 18.977 10.9116 20.6627 10.9116 22.4204V47.3398C10.9116 49.0976 11.6099 50.7833 12.8528 52.0262C14.0957 53.2691 15.7814 53.9673 17.5391 53.9673H42.4585C44.2163 53.9673 45.902 53.2691 47.1449 52.0262C48.3878 50.7833 49.0861 49.0976 49.0861 47.3398V22.4204C49.0861 20.6627 48.3878 18.977 47.1449 17.7341C45.902 16.4912 44.2163 15.7929 42.4585 15.7929H17.5391ZM13.5626 22.4204C13.5626 21.3658 13.9816 20.3543 14.7273 19.6086C15.4731 18.8629 16.4845 18.4439 17.5391 18.4439H42.4585C43.5132 18.4439 44.5246 18.8629 45.2704 19.6086C46.0161 20.3543 46.4351 21.3658 46.4351 22.4204V47.3398C46.4351 48.3945 46.0161 49.4059 45.2704 50.1516C44.5246 50.8974 43.5132 51.3163 42.4585 51.3163H17.5391C16.4845 51.3163 15.4731 50.8974 14.7273 50.1516C13.9816 49.4059 13.5626 48.3945 13.5626 47.3398V22.4204Z" fill="#3A3A85"/>
+                </svg>
+                
+                                </div>
+                                <div class="splitsideheader">
+                                    Know Your Customer (KYC)
+                                </div>
+                                <div class="splitsidebody">
+                                    Complying with Know Your Customer (KYC) rules and regulations no longer needs to be a burden to your financial institution. ISSL has developed a KYC product that adheres to global industry standards and best practices, yet can be tailored to suit regional regulatory requirements
+                
+                                    <div class="requestdet">
+                                        Request Details  <span> ></span> 
+                                    </div>
+                
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <br>
+                                <div class="corebankingsplitdiv">
+                            <div class="sliptside1">
+                                <div class="icicon">
+                                   
+                <svg width="57" height="61" viewBox="0 0 57 61" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="17.0633" cy="16.5353" r="16.2137" fill="#3A3A85" fill-opacity="0.15"/>
+                    <path d="M46.7547 12.6028H53.1172V18.9653H46.7547V12.6028ZM46.7547 22.1465H53.1172V28.509H46.7547V22.1465ZM37.2109 12.6028H43.5734V18.9653H37.2109V12.6028ZM37.2109 22.1465H43.5734V28.509H37.2109V22.1465Z" fill="#3A3A85"/>
+                    <path d="M49.936 34.8716V44.4153H11.761V18.9653H30.8485V15.7841H11.761C10.9172 15.7841 10.1081 16.1192 9.51148 16.7158C8.91488 17.3124 8.57971 18.1216 8.57971 18.9653V44.4153C8.57971 45.259 8.91488 46.0682 9.51148 46.6648C10.1081 47.2614 10.9172 47.5966 11.761 47.5966H24.486V53.9591H18.1235V57.1403H43.5735V53.9591H37.211V47.5966H49.936C50.7797 47.5966 51.5888 47.2614 52.1854 46.6648C52.782 46.0682 53.1172 45.259 53.1172 44.4153V34.8716H49.936ZM34.0297 53.9591H27.6672V47.5966H34.0297V53.9591Z" fill="#3A3A85"/>
+                    </svg>
+                     
+                                </div>
+                                <div class="splitsideheader">
+                                    Online Booking
+                                </div>
+                                <div class="splitsidebody">
+                                    To retain current clients and attract new ones, you need to offer your clients the best solutions to bank online. ISSL’s customizable electronic banking solutions will simplify your customers’ banking experience by enabling them to conduct online banking transactions at any time of day or night, such as making transfers between personal and external accounts, checking account status, setting up standing orders and direct debits, paying utility bills and more.
+                
+                
+                               
+                                    <div class="requestdet">
+                                        Request Details  <span> ></span> 
+                                    </div>
+                
+                                </div>
+                            </div>
+                            <div class="splitside2">
+                                <div class="icicon">
+                                  
+                <svg width="56" height="61" viewBox="0 0 56 61" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="16.2137" cy="16.5353" r="16.2137" fill="#3A3A85" fill-opacity="0.15"/>
+                    <path d="M38.4823 13.6632H21.5156C19.173 13.6632 17.2739 15.5623 17.2739 17.9049V51.8382C17.2739 54.1808 19.173 56.0799 21.5156 56.0799H38.4823C40.8249 56.0799 42.7239 54.1808 42.7239 51.8382V17.9049C42.7239 15.5623 40.8249 13.6632 38.4823 13.6632Z" stroke="#3A3A85" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M29.8928 47.5966H30.1049" stroke="#3A3A85" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                      
+                                </div>
+                                <div class="splitsideheader">
+                                   Mobile Banking
+                                </div>
+                                <div class="splitsidebody">
+                                  
+                ISSL’s mobile banking software is available as both an App and with SMS, and can be easily integrated into your existing technology interface. Similar to our online banking software, our customizable mobile solution will simplify your customers’ banking experience by enabling them to conduct a number of banking transactions on their regular phones, smart phones and tablets. Some of these transactions include viewing account balances and statements, as well as transferring funds internally between accounts and to external accounts.
+                
+                
+                
+                                    <div class="requestdet">
+                                        Request Details  <span> ></span> 
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <br>
+                      
+                    </div>
+                
+                
+                
+                </div>
+                
+                
+                            </div>
+            <div id="tab2" class="tab-slider--body">
+
+                <div class="Bankingsolution">
+                    <div class="bankingsolutiondiv">
+                        <div class="bankingsoltxt">
+                            <div class="intro2">
+                                <div class="intro2heading">Integration at a low-cost</div>
+                                <div class="intro2body">Biometrics technology has become a fast and reliable solution for access control, duplicate identity and time and attendance challenges. From an access control system for warehouses and company computers to eliminating “ghost workers”, ISSL can integrate a low-cost biometric verification system into your technology platform that will help you improve your security and boost your profitability.
+                
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bankingsolimg">
+                            <img src="business-3d-e-wallet-in-a-phone-with-bank-card-stack-of-coins-and-leather-wallet 1 (3).png" alt="">
+                        </div>
+                
+                    </div>
+                
+                    <div class="vixi">
+                        ISSL offers a combination of online banking and bISSL can integrate a low-cost biometric verification system into your technology platform that will help you improve your security and boost your profitability.
+
+                
+                    </div>
+                
+                    <div class="corebanking">
+                        <br>
+                    
+                        <div class="corebankingsplitdiv">
+                            <div class="sliptside1">
+                                <div class="icicon">
+                                    
+<svg width="57" height="61" viewBox="0 0 57 61" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="17.0721" cy="16.5434" r="16.2137" fill="#3A3A85" fill-opacity="0.15"/>
+    <path d="M30.8358 13.6713C19.1288 13.6713 9.64868 23.1727 9.64868 34.8797C9.64868 46.5867 19.1288 56.088 30.8358 56.088C42.564 56.088 52.0653 46.5867 52.0653 34.8797C52.0653 23.1727 42.564 13.6713 30.8358 13.6713ZM30.857 51.8463C21.4829 51.8463 13.8903 44.2537 13.8903 34.8797C13.8903 25.5056 21.4829 17.913 30.857 17.913C40.2311 17.913 47.8237 25.5056 47.8237 34.8797C47.8237 44.2537 40.2311 51.8463 30.857 51.8463ZM31.9174 24.2755H28.7362V37.0005L39.8706 43.6811L41.4612 41.0725L31.9174 35.4099V24.2755Z" fill="#3A3A85"/>
+    </svg>
+    
+                                </div>
+                                <div class="splitsideheader">
+                                    Time and attendance
+                                </div>
+                                <div class="splitsidebody">
+                                    Losing money due to time and attendance management issues? Employees using time punch cards that can be easily lost, forgotten or “buddy punched”? HR team spend too much time on payroll and attendance disputes? “Ghost workers” on your payroll? In partnership with ZKTeco and FingerTec, we can solve your time attendance issues by implementing biometrics software that keeps your employees honest, improve efficiency and boost profitability.
+
+                
+                           
+                                    <div class="requestdet">
+                                        Request Details  <span> ></span> 
+                                    </div>
+                
+                                </div>
+                            </div>
+                            <div class="splitside2">
+                                <div class="icicon">
+                
+
+                                    <svg width="56" height="61" viewBox="0 0 56 61" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <circle cx="16.2225" cy="16.5434" r="16.2137" fill="#3A3A85" fill-opacity="0.15"/>
+                                        <path d="M43.3707 16.9136C43.1848 16.9141 43.0021 16.8646 42.8418 16.7704C38.4298 14.4084 34.6153 13.4063 30.0423 13.4063C25.4921 13.4063 21.1715 14.5276 17.2417 16.7704C16.686 17.0846 16.001 16.8659 15.6789 16.2893C15.5351 16.011 15.5027 15.6884 15.5882 15.387C15.6737 15.0857 15.8707 14.8282 16.1392 14.6668C20.3776 12.263 25.1697 11.0061 30.0423 11.0203C34.9364 11.0203 39.2112 12.1417 43.8996 14.6469C44.1731 14.7973 44.3768 15.049 44.4669 15.3478C44.5571 15.6467 44.5265 15.969 44.3817 16.2455C44.2947 16.4419 44.1532 16.6092 43.974 16.7276C43.7948 16.846 43.5855 16.9105 43.3707 16.9136ZM10.4855 29.4398C10.2467 29.4381 10.0143 29.3631 9.81945 29.225C9.566 29.0367 9.39555 28.7573 9.34399 28.4458C9.29244 28.1342 9.36381 27.8148 9.54308 27.5549C11.8187 24.2146 14.7126 21.59 18.1613 19.7529C25.3768 15.8916 34.6153 15.8638 41.8536 19.729C45.3013 21.5662 48.1963 24.1668 50.4718 27.4833C50.6504 27.7435 50.7213 28.0627 50.6698 28.374C50.6183 28.6853 50.4483 28.9646 50.1955 29.1534C50.0728 29.2451 49.9326 29.3107 49.7836 29.346C49.6346 29.3813 49.4799 29.3857 49.3292 29.3589C49.1784 29.332 49.0347 29.2746 48.9071 29.19C48.7794 29.1054 48.6705 28.9955 48.587 28.8671C46.5191 25.8609 43.8996 23.4988 40.7969 21.8525C34.2017 18.3451 25.7675 18.3451 19.1952 21.8763C16.0696 23.5465 13.45 25.9324 11.3822 28.9347C11.2931 29.0927 11.1624 29.2233 11.0043 29.3123C10.8463 29.4013 10.6668 29.4454 10.4855 29.4398ZM24.8479 58.242C24.696 58.2435 24.5456 58.2123 24.4068 58.1505C24.2681 58.0888 24.1442 57.9979 24.0436 57.8841C22.0444 55.8044 20.9608 54.4643 19.4248 51.5813C17.8342 48.6466 17.0121 45.0676 17.0121 41.2263C17.0121 34.1401 22.8487 28.3661 30.0194 28.3661C37.1901 28.3661 43.0307 34.1401 43.0307 41.2263C43.0352 41.38 43.0089 41.533 42.9532 41.6764C42.8975 41.8197 42.8136 41.9504 42.7065 42.0607C42.5993 42.171 42.4712 42.2587 42.3296 42.3186C42.1879 42.3785 42.0357 42.4093 41.882 42.4093C41.7282 42.4093 41.576 42.3785 41.4344 42.3186C41.2928 42.2587 41.1646 42.171 41.0575 42.0607C40.9504 41.9504 40.8665 41.8197 40.8108 41.6764C40.7551 41.533 40.7287 41.38 40.7332 41.2263C40.7332 35.4523 35.9296 30.752 30.0244 30.752C24.1192 30.752 19.3105 35.4523 19.3105 41.2263C19.3105 44.662 20.0452 47.8353 21.4469 50.4121C22.9182 53.156 23.9323 54.3251 25.6989 56.1861C25.9084 56.4177 26.0244 56.7189 26.0244 57.0311C26.0244 57.3434 25.9084 57.6446 25.6989 57.8762C25.4733 58.1037 25.1682 58.2349 24.8479 58.242ZM41.3258 53.828C38.5909 53.828 36.1781 53.1122 34.2017 51.7045C32.518 50.5243 31.1424 48.9568 30.1908 47.134C29.2393 45.3112 28.7397 43.2865 28.734 41.2303C28.7275 41.0753 28.7525 40.9207 28.8073 40.7756C28.8622 40.6306 28.9458 40.4981 29.0531 40.3862C29.1605 40.2743 29.2894 40.1853 29.432 40.1244C29.5746 40.0636 29.7281 40.0322 29.8832 40.0322C30.0383 40.0322 30.1917 40.0636 30.3344 40.1244C30.477 40.1853 30.6059 40.2743 30.7133 40.3862C30.8206 40.4981 30.9042 40.6306 30.9591 40.7756C31.0139 40.9207 31.0389 41.0753 31.0324 41.2303C31.0363 42.9004 31.4436 44.545 32.2198 46.0238C32.9959 47.5027 34.1179 48.7722 35.4901 49.7242C37.1215 50.8695 39.0293 51.4142 41.3277 51.4142C42.1282 51.4 42.9262 51.3202 43.7137 51.1757C44.334 51.0564 44.9315 51.4858 45.0458 52.1539C45.1041 52.4622 45.0377 52.781 44.8612 53.0404C44.6847 53.2999 44.4125 53.4787 44.1044 53.5377C43.189 53.7186 42.2588 53.8144 41.3258 53.824V53.828ZM36.706 58.7391C36.605 58.7349 36.5049 58.7189 36.4077 58.6914C32.7533 57.6415 30.3634 56.2338 27.8581 53.6809C24.6401 50.3644 22.8715 45.9504 22.8715 41.2263C22.8715 37.3611 26.0428 34.2116 29.9488 34.2116C33.8548 34.2116 37.0271 37.3611 37.0271 41.2263C37.0271 43.7792 39.1645 45.855 41.8069 45.855C44.4493 45.855 46.5867 43.7792 46.5867 41.2263C46.5867 32.2313 39.1178 24.9303 29.9259 24.9303C23.3994 24.9303 17.4246 28.7001 14.7365 34.5457C13.8417 36.4783 13.3805 38.7449 13.3805 41.2263C13.3805 43.0873 13.5405 46.022 14.9194 49.8395C15.15 50.4599 14.8508 51.1518 14.2533 51.3665C14.1113 51.4206 13.9599 51.4454 13.808 51.4395C13.6562 51.4335 13.5072 51.397 13.3698 51.332C13.2325 51.267 13.1097 51.1749 13.0089 51.0612C12.908 50.9476 12.8312 50.8147 12.783 50.6706C11.6742 47.6453 11.1062 44.4484 11.1049 41.2263C11.1049 38.3632 11.6338 35.7585 12.6677 33.4959C15.7246 26.8351 22.5037 22.5205 29.9259 22.5205C40.3823 22.5205 48.8852 30.8952 48.8852 41.2024C48.8852 45.0676 45.7139 48.2171 41.8069 48.2171C37.8999 48.2171 34.7286 45.0676 34.7286 41.2024C34.7296 38.6495 32.5922 36.5697 29.9498 36.5697C27.3074 36.5697 25.17 38.6455 25.17 41.1985C25.17 45.2744 26.687 49.0959 29.4676 51.959C31.6548 54.2018 33.7424 55.4385 36.9824 56.373C37.6027 56.54 37.9477 57.2081 37.7866 57.8284C37.7364 58.0803 37.6021 58.3076 37.4058 58.473C37.2094 58.6385 36.9627 58.7323 36.706 58.7391Z" fill="#3A3A85"/>
+                                        </svg>
+                                        
+                
+                                </div>
+                                <div class="splitsideheader">
+                                    Access Control
+                                </div>
+                                <div class="splitsidebody">
+                                    Biometric software for access control can be used for controlling access to workstations, networks and physical locations. Whether you have one facility that requires restricted access, or a number of sites, you can use biometric verification technology to limit access and see real-time who is gaining access. Through our partner, we most commonly install fingerprint readers and facial recognition devices. These can replace card and PIN identification systems, both of which can be lost or stolen, increasing your risk exposure. Access control via biometric verification is easy to use, secure and fast.
+
+                
+                                    <div class="requestdet">
+                                        Request Details  <span> ></span> 
+                                    </div>
+                
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <br>
+
+                      
+                    </div>
+                
+        <div class="flexcon">
+            <p class="prod">
+                Our Products
+            </p>
+
+            <div class="viewmor">
+                View all
+            </div>
+        </div>
+
+    <div class="productdiv">
+
+
+        <div class="product">
+            <div class="prodimg">
+                <img src="Rectangle 225.png" alt="">
+            </div>
+            <div class="prodtitle">
+                KF1000 Series
+            </div>
+            <div class="proddetail">
+                View Details   >
+            </div>
+        </div>
+        <div class="product">
+            <div class="prodimg">
+                <img src="Rectangle 225 (1).png" alt="">
+            </div>
+            <div class="prodtitle">
+                SpeedFace-V3L Series
+            </div>
+            <div class="proddetail">
+                View Details   >
+            </div>
+        </div>
+
+        <div class="product">
+            <div class="prodimg">
+                <img src="Rectangle 225 (5).png" alt="">
+            </div>
+            <div class="prodtitle">
+                BR1200
+            </div>
+            <div class="proddetail">
+                View Details   >
+            </div>
+        </div>
+
+        <div class="product">
+            <div class="prodimg">
+                <img src="Rectangle 225 (4).png" alt="">
+            </div>
+            <div class="prodtitle">
+                FR1300
+            </div>
+            <div class="proddetail">
+                View Details   >
+            </div>
+        </div>
+
+
+        </div>
+              
+                
+                </div>
+
+
+
+            </div>
+            <div id="tab3" class="tab-slider--body">
+
+                <div class="Bankingsolution">
+                    <div class="bankingsolutiondiv">
+                        <div class="bankingsoltxt">
+                            <div class="intro2">
+                                <div class="intro2heading">CASgenesis - CRM Solution</div>
+                                <div class="intro2body">From sales force automation to channel management, we deploy the award-winning genesisWorld CRM from our CRM partner, CAS-CRM, to provide flexible solutions that can be tailored precisely to your needs and seamlessly extended as your business expands. With an extensive scope of features that gives you valuable insight into your operations and new opportunities.The solution is equipped with many customizable features, has a familiar feel, and is very affordable.
+
+                
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bankingsolimg">
+                            <img src="business-3d-e-wallet-in-a-phone-with-bank-card-stack-of-coins-and-leather-wallet 1 (4).png" alt="">
+                        </div>
+                
+                    </div>
+                
+                    <div class="vixi">
+                        Our CRM solution for marketing, sales, project management and customer relations is your gateway to motivated employees, satisfied customers and increased revenue.
+
+                
+                    </div>
+                
+                    <div class="corebanking">
+                        <br>
+                    
+                        <div class="corebankingsplitdiv">
+                            <div class="sliptside1">
+                                <div class="icicon">
+                                  
+                                    <svg width="57" height="61" viewBox="0 0 57 61" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <circle cx="17.0633" cy="16.5434" r="16.2137" fill="#3A3A85" fill-opacity="0.15"/>
+                                        <path d="M21.3046 18.9734C15.1727 18.9734 10.1702 23.976 10.1702 30.1078C10.1702 30.7791 10.2879 31.401 10.4056 32.0213C9.324 33.612 8.57959 35.4762 8.57959 37.5647C8.57959 43.0444 13.0222 47.4997 18.4844 47.5792C20.4838 49.488 23.1004 50.7859 26.0765 50.7859C29.1336 50.7859 31.7995 49.418 33.8117 47.425C33.9055 47.4313 33.9182 47.4377 34.0296 47.4377C36.5714 47.4377 38.6392 46.0507 40.0581 44.169C40.6911 44.2803 41.3115 44.4235 41.9827 44.4235C48.1146 44.4235 53.1171 39.4209 53.1171 33.2891C53.1171 27.1572 48.1146 22.1547 41.9827 22.1547C40.8772 22.1547 39.8576 22.441 38.8508 22.7385C37.0311 21.4278 34.8504 20.5641 32.439 20.5641C30.9358 20.5641 29.5806 21.0619 28.2636 21.6075C26.3501 20.036 23.9768 18.9734 21.3046 18.9734ZM21.3046 22.1547C23.4726 22.1547 25.4116 23.0136 26.8463 24.4166L27.6798 25.2246L28.7042 24.6774C29.8527 24.0621 31.136 23.7418 32.439 23.7453C34.3058 23.7403 36.1137 24.3987 37.5401 25.6032L38.2607 26.206L39.1355 25.8704C40.3393 25.4028 41.6391 25.2363 42.9218 25.3853C44.2046 25.5344 45.4316 25.9945 46.4961 26.7257C47.5606 27.4569 48.4304 28.437 49.0298 29.5809C49.6293 30.7247 49.9403 31.9977 49.9358 33.2891C49.9395 34.5103 49.6609 35.7159 49.122 36.8118C48.583 37.9077 47.7982 38.8643 46.8287 39.607C45.8592 40.3497 44.7313 40.8585 43.5328 41.0935C42.3344 41.3286 41.0979 41.2837 39.9197 40.9622L38.6838 40.6282L38.1 41.7639C37.3222 43.2496 35.8127 44.2564 34.0296 44.2564L33.5524 44.1992L32.7126 44.1196L32.1654 44.7654C31.4202 45.6556 30.4887 46.3714 29.4366 46.862C28.3844 47.3526 27.2374 47.6061 26.0765 47.6047C24.9524 47.6056 23.8411 47.3666 22.8168 46.9035C21.7926 46.4405 20.879 45.7642 20.1371 44.9197L19.6328 44.3551L18.8821 44.3916C18.5401 44.4044 18.459 44.4235 18.6196 44.4235C17.7178 44.4268 16.8243 44.2517 15.9905 43.9081C15.1568 43.5645 14.3992 43.0592 13.7617 42.4215C13.1241 41.7838 12.619 41.0261 12.2756 40.1923C11.9322 39.3584 11.7573 38.4649 11.7608 37.5631C11.7608 35.9613 12.3335 34.5075 13.2767 33.3209L13.7618 32.7165L13.5757 31.9657C13.2901 30.7965 13.2744 29.5776 13.5298 28.4014C13.7852 27.2252 14.305 26.1226 15.0498 25.1771C15.7946 24.2317 16.7449 23.4682 17.8286 22.9445C18.9123 22.4208 20.101 22.1507 21.3046 22.1547ZM23.3183 30.1078C23.2865 30.1078 23.2611 30.1333 23.2611 30.1714V34.8113C23.2611 34.8479 23.2865 34.8797 23.3183 34.8797H23.8591C23.8957 34.8797 23.9148 34.8479 23.9148 34.8113V30.1699C23.9148 30.138 23.8894 30.1078 23.8575 30.1078H23.3183ZM32.7555 30.1078C32.3706 30.1078 32.0715 30.2128 31.8616 30.4307C31.65 30.6423 31.5005 31.0033 31.4257 31.4249L31.3892 31.6985H30.912C30.912 31.6985 30.8483 31.7175 30.842 31.778L30.7624 32.2202C30.7545 32.2584 30.7736 32.2886 30.8293 32.2886H31.2953L30.8293 34.8861C30.8021 35.0637 30.7585 35.2383 30.6988 35.4078C30.6689 35.5151 30.6205 35.6163 30.5557 35.7068C30.5 35.78 30.4507 35.8309 30.3648 35.8548C30.1897 35.9131 29.9996 35.9069 29.8288 35.8373C29.8288 35.8373 29.781 35.8182 29.7556 35.8738C29.7016 36.0141 29.6496 36.1552 29.5997 36.2969C29.587 36.3399 29.6061 36.3717 29.6315 36.3828C29.6954 36.4074 29.7614 36.4261 29.8288 36.4385C29.9401 36.4703 30.0403 36.4703 30.1278 36.4703C30.3266 36.4703 30.5 36.4385 30.6495 36.3908C30.7992 36.333 30.9332 36.2409 31.0408 36.122C31.1597 35.9823 31.2524 35.8222 31.3144 35.6496C31.3892 35.4587 31.4448 35.2153 31.4941 34.9354L31.9665 32.2886H32.6632C32.6632 32.2886 32.7253 32.2886 32.738 32.2202L32.8112 31.7859C32.8175 31.7414 32.8 31.6985 32.7428 31.6985H32.0731C32.0779 31.6857 32.1208 31.2753 32.2036 31.0527C32.2342 30.9688 32.2831 30.8927 32.3467 30.83C32.3964 30.778 32.4581 30.7392 32.5265 30.717C32.6935 30.6696 32.871 30.6741 33.0354 30.7298C33.1038 30.7473 33.1102 30.7298 33.1293 30.6979L33.2836 30.2573C33.3027 30.208 33.2661 30.1889 33.2518 30.1826C33.1837 30.159 33.1133 30.1425 33.0418 30.1333C32.9476 30.1144 32.8516 30.1059 32.7555 30.1078ZM18.1599 31.6985C17.4712 31.6985 16.9924 32.0834 16.9924 32.6306V32.6433C16.9924 33.2159 17.5205 33.4068 18.0184 33.5372L18.0979 33.5627C18.459 33.6613 18.7691 33.7488 18.7691 33.9842V33.9905C18.7691 34.2085 18.5639 34.3643 18.241 34.3643C18.117 34.3643 17.713 34.3643 17.2787 34.1098C17.2353 34.091 17.1937 34.0681 17.1546 34.0414C17.1292 34.0287 17.0799 34.0096 17.0544 34.0733L16.9049 34.4502C16.8811 34.5075 16.9113 34.5186 16.9176 34.5314C16.9924 34.5759 17.0608 34.6061 17.1292 34.6427C17.5014 34.824 17.8561 34.8797 18.2235 34.8797C18.9743 34.8797 19.4404 34.5139 19.4404 33.9174V33.911C19.4404 33.3575 18.9123 33.1586 18.4224 33.0155L18.3588 32.9964C17.9865 32.8851 17.6636 32.7912 17.6636 32.5669V32.551C17.6636 32.357 17.8498 32.2202 18.1408 32.2202C18.4653 32.2202 18.8439 32.314 19.092 32.4429C19.092 32.4429 19.1668 32.481 19.1922 32.419C19.2113 32.3824 19.3354 32.0707 19.3481 32.0404C19.3593 32.0023 19.3354 31.9768 19.3099 31.9657C18.9799 31.7871 18.6099 31.6952 18.2347 31.6985H18.1599ZM21.2855 31.6985C21.0963 31.6996 20.9074 31.7161 20.7208 31.7478C20.7208 31.7478 20.2548 31.8289 20.0623 31.9704C20.0623 31.9704 20.0241 31.9911 20.0496 32.0468L20.1991 32.419C20.2166 32.4683 20.2675 32.4508 20.2675 32.4508C20.2675 32.4508 20.2786 32.4445 20.2993 32.4381C20.7081 32.2265 21.2235 32.2393 21.2235 32.2393C21.4541 32.2393 21.6275 32.2758 21.7516 32.3633C21.8629 32.4429 21.9265 32.5749 21.9265 32.8357V32.9153C21.7452 32.8914 21.5766 32.8723 21.5766 32.8723C21.4907 32.866 21.3794 32.866 21.2426 32.866C21.0666 32.8644 20.8912 32.8858 20.7208 32.9296C20.5632 32.9664 20.4135 33.031 20.2786 33.1205C20.1536 33.2031 20.05 33.3144 19.9764 33.445C19.8951 33.582 19.8537 33.739 19.8571 33.8983C19.8571 34.0733 19.8889 34.2212 19.9494 34.3452C20.0169 34.4693 20.1128 34.5756 20.2293 34.6554C20.3618 34.7371 20.507 34.7962 20.6588 34.8304C20.8258 34.8622 21.0183 34.8797 21.2235 34.8797C21.4414 34.8797 21.6593 34.8606 21.8693 34.8304C22.0808 34.7986 22.3305 34.7493 22.4037 34.7302C22.4721 34.7175 22.5469 34.6984 22.5469 34.6984C22.6025 34.6872 22.5962 34.6379 22.5962 34.6379V32.8405C22.5962 32.4429 22.4848 32.1518 22.2621 31.972C22.0379 31.7923 21.7086 31.6985 21.2855 31.6985ZM26.0574 31.6985C25.8196 31.6912 25.5829 31.7335 25.3623 31.8225C25.179 31.9022 25.0149 32.02 24.8808 32.1681C24.7467 32.3162 24.6456 32.4912 24.5845 32.6815C24.5224 32.8723 24.4922 33.0839 24.4922 33.3082C24.4922 33.5372 24.5288 33.7488 24.5908 33.9349C24.6544 34.1273 24.7594 34.2959 24.9026 34.4327C25.0394 34.5759 25.2128 34.6872 25.4307 34.762C25.6422 34.8415 25.9031 34.8797 26.2005 34.8797C26.8161 34.8733 27.1326 34.7493 27.2694 34.6809C27.2885 34.6681 27.3124 34.6491 27.2885 34.587L27.1454 34.2275C27.1263 34.1719 27.0658 34.1894 27.0658 34.1894C26.9084 34.2466 26.6984 34.3389 26.1942 34.3389C25.8649 34.3389 25.6215 34.2514 25.4736 34.1098C25.313 33.9667 25.2382 33.7551 25.2255 33.4577H27.3442C27.3442 33.4577 27.3999 33.4577 27.4062 33.4068C27.4062 33.3829 27.481 32.9964 27.3426 32.5558C27.2891 32.3834 27.1959 32.226 27.0706 32.0961C26.9591 31.976 26.8236 31.8806 26.6729 31.8162C26.4777 31.7361 26.2684 31.696 26.0574 31.6985ZM29.0843 31.6985C28.4004 31.6985 27.9152 32.0834 27.9152 32.6306V32.6433C27.9152 33.2159 28.4497 33.4068 28.9412 33.5372L29.0271 33.5627C29.3881 33.6613 29.6983 33.7488 29.6983 33.9842V33.9905C29.6983 34.2085 29.4931 34.3643 29.1639 34.3643C29.0398 34.3643 28.6358 34.3643 28.2015 34.1098C28.1522 34.0844 28.1141 34.0653 28.0775 34.0414C28.0647 34.0351 28.0027 34.0096 27.9773 34.0733L27.8341 34.4502C27.8102 34.5075 27.8405 34.5186 27.8468 34.5314C27.9152 34.5759 27.9836 34.6061 28.0584 34.6427C28.3992 34.8074 28.7743 34.8886 29.1527 34.8797C29.8971 34.8797 30.3696 34.5139 30.3696 33.9174V33.911C30.3696 33.3575 29.8415 33.1586 29.3516 33.0155L29.2832 32.9964C28.9094 32.8851 28.5865 32.7912 28.5865 32.5669V32.551C28.5865 32.357 28.7789 32.2202 29.0637 32.2202C29.3881 32.2202 29.7731 32.314 30.0212 32.4429C30.0212 32.4429 30.096 32.481 30.1214 32.419C30.1695 32.2913 30.2215 32.165 30.2773 32.0404C30.2884 32.0023 30.2646 31.9768 30.2328 31.9657C29.9032 31.7874 29.5338 31.6954 29.1591 31.6985H29.0843ZM34.2857 31.6985C34.0296 31.6985 33.7989 31.7414 33.6065 31.8225C33.4255 31.8999 33.2641 32.0167 33.1341 32.1645C33.0019 32.3091 32.9026 32.4806 32.843 32.6671C32.725 33.0755 32.725 33.509 32.843 33.9174C32.9019 34.1058 33.0013 34.2791 33.1343 34.425C33.2673 34.5709 33.4306 34.686 33.6128 34.762C33.8267 34.8448 34.0548 34.8848 34.2841 34.8797C34.5386 34.8797 34.7613 34.8431 34.9553 34.7556C35.1397 34.6807 35.3054 34.5662 35.4405 34.42C35.5687 34.2747 35.6637 34.1032 35.7188 33.9174C35.7825 33.7233 35.8143 33.5134 35.8143 33.2891C35.8143 33.0712 35.7825 32.8596 35.7188 32.6687C35.6639 32.4824 35.5689 32.3103 35.4405 32.1645C35.3057 32.0164 35.1401 31.8997 34.9553 31.8225C34.7421 31.7368 34.5139 31.6947 34.2841 31.6985H34.2857ZM39.8274 31.6985C39.565 31.6985 39.3296 31.7414 39.1244 31.8225C38.9355 31.8981 38.766 32.0149 38.6281 32.1645C38.4881 32.3056 38.3835 32.4779 38.3227 32.6671C38.2491 32.8661 38.2135 33.077 38.2177 33.2891C38.2177 33.7742 38.3545 34.1639 38.6345 34.4502C38.9128 34.7365 39.3232 34.8797 39.8704 34.8797C40.1933 34.8797 40.5225 34.8161 40.7579 34.7302C40.7579 34.7302 40.8025 34.7127 40.7834 34.6618L40.6275 34.2705C40.61 34.2148 40.548 34.2339 40.548 34.2339C40.4564 34.2719 40.3601 34.2971 40.2617 34.3087C40.1464 34.3266 40.0299 34.3346 39.9133 34.3325C39.6095 34.3325 39.3661 34.253 39.1991 34.0844C39.0242 33.9221 38.9255 33.6549 38.9255 33.2891C38.9319 32.9662 39.013 32.7165 39.1673 32.5256C39.3232 32.3379 39.5538 32.2456 39.864 32.2456C40.1185 32.2456 40.3173 32.2774 40.5225 32.3315C40.5225 32.3315 40.5782 32.3506 40.5973 32.2949C40.653 32.1518 40.6959 32.0532 40.7532 31.8973C40.7707 31.848 40.7277 31.8289 40.715 31.8225C40.5762 31.7827 40.4355 31.7498 40.2935 31.7239C40.1389 31.7049 39.9832 31.6964 39.8274 31.6985ZM42.4233 31.6985C42.1855 31.6912 41.9488 31.7335 41.7282 31.8225C41.5433 31.9004 41.3775 32.0176 41.2424 32.1659C41.1073 32.3142 41.006 32.4901 40.9456 32.6815C40.8871 32.8852 40.8577 33.0962 40.8581 33.3082C40.8581 33.5372 40.89 33.7488 40.9568 33.9349C41.0157 34.1236 41.1207 34.2946 41.2622 34.4327C41.4053 34.5759 41.5803 34.6872 41.7902 34.762C42.0082 34.8415 42.2674 34.8797 42.5601 34.8797C43.1757 34.8733 43.4986 34.7493 43.629 34.6809C43.6545 34.6681 43.6783 34.6491 43.6481 34.587L43.5049 34.2275C43.4859 34.1719 43.4254 34.1894 43.4254 34.1894C43.2743 34.2466 43.058 34.3389 42.5537 34.3389C42.2309 34.3389 41.9891 34.2514 41.8332 34.1098C41.6789 33.9667 41.6041 33.7551 41.5851 33.4577H43.7038C43.7038 33.4577 43.7594 33.4577 43.7722 33.4068C43.7722 33.3829 43.8406 32.9964 43.7038 32.5558C43.6498 32.3833 43.5561 32.2258 43.4302 32.0961C43.3187 31.976 43.1832 31.8806 43.0325 31.8162C42.8395 31.7361 42.6323 31.696 42.4233 31.6985ZM37.8264 31.6985C37.6375 31.6813 37.4473 31.7114 37.2729 31.7859C37.1351 31.8428 37.0117 31.9298 36.9118 32.0404V31.7923C36.9118 31.7541 36.8943 31.7287 36.8561 31.7287H36.3153C36.2787 31.7287 36.2485 31.7541 36.2485 31.7923V34.8177C36.2485 34.8495 36.2803 34.8797 36.3169 34.8797H36.8689C36.907 34.8797 36.9373 34.8479 36.9373 34.8161V33.3082C36.9373 33.1014 36.9627 32.8978 37.0057 32.7674C37.042 32.6538 37.1059 32.5511 37.1918 32.4683C37.2699 32.4014 37.3608 32.351 37.459 32.3204C37.6268 32.2702 37.8053 32.268 37.9743 32.314C38.0125 32.314 38.038 32.2886 38.0491 32.2504C38.0873 32.1645 38.1859 31.8846 38.205 31.8289C38.2082 31.8223 38.2102 31.8152 38.2107 31.8078C38.2111 31.8005 38.2102 31.7932 38.2078 31.7862C38.2054 31.7793 38.2017 31.7728 38.1969 31.7673C38.192 31.7618 38.1861 31.7573 38.1795 31.7541C38.0632 31.7276 37.9452 31.709 37.8264 31.6985ZM26.0081 32.2202C26.288 32.2202 26.4741 32.3204 26.6046 32.5065C26.6906 32.645 26.7399 32.8033 26.7477 32.9662H25.2318C25.2543 32.8011 25.3141 32.6433 25.4068 32.5049C25.5293 32.3204 25.7281 32.2202 26.0081 32.2202ZM42.3756 32.2202C42.654 32.2202 42.8337 32.3204 42.9705 32.5065C43.0573 32.6443 43.1046 32.8033 43.1073 32.9662H41.5962C41.6195 32.8023 41.6769 32.6452 41.7648 32.5049C41.8952 32.3204 42.0941 32.2202 42.374 32.2202H42.3756ZM34.2841 32.2329C34.564 32.2329 34.7613 32.3204 34.8933 32.5065C35.0301 32.6926 35.0985 32.9535 35.0985 33.2891C35.0985 33.6311 35.0301 33.8919 34.8997 34.0844C34.7629 34.2641 34.564 34.358 34.2841 34.358C34.0041 34.358 33.8069 34.2641 33.6812 34.0844C33.5445 33.8919 33.4824 33.6311 33.4824 33.2891C33.4824 32.955 33.546 32.6926 33.6749 32.5065C33.8053 32.3267 34.0041 32.2329 34.2841 32.2329ZM21.3475 33.3622C21.6529 33.3702 21.9265 33.4131 21.9265 33.4131V34.3087C21.9265 34.3087 21.6529 34.3564 21.3539 34.3771C20.9197 34.3946 20.7272 34.2578 20.7336 34.2578C20.6461 34.1957 20.6397 34.1782 20.6079 34.1401C20.5612 34.0638 20.5395 33.9748 20.5459 33.8856C20.5459 33.7106 20.6095 33.5865 20.7336 33.507C20.7336 33.507 20.9133 33.3575 21.3475 33.3638V33.3622Z" fill="#3A3A85"/>
+                                        </svg>
+                                    
+      
+                                </div>
+                                <div class="splitsideheader">
+                                    Sales Force Automation
+                                </div>
+                                <div class="splitsidebody">
+                                    
+Our Sales Force Automation (SFA) solution combines all the features your team will need to identify leads, manage opportunities, close deals and keep your customers happy. The sales force automation process also means your sales team can be on the road without missing a beat. Accessing client information out of the office, as well as creating automatic notifications and actions, has never been so easy.
+
+                
+                           
+                                    <div class="requestdet">
+                                        Request Details  <span> ></span> 
+                                    </div>
+                
+                                </div>
+                            </div>
+                            <div class="splitside2">
+                                <div class="icicon">
+                
+   
+<svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <g clip-path="url(#clip0_1966_2171)">
+    <path d="M15.8332 29.4144L23.4116 36.9929L37.6212 22.7833C37.8528 22.5128 37.9739 22.1649 37.9601 21.809C37.9464 21.4532 37.7989 21.1156 37.5471 20.8638C37.2952 20.612 36.9577 20.4645 36.6019 20.4508C36.246 20.437 35.8981 20.5581 35.6276 20.7897L23.4116 32.9491L17.8409 27.3784C17.5704 27.1468 17.2225 27.0257 16.8666 27.0395C16.5108 27.0532 16.1732 27.2007 15.9214 27.4525C15.6696 27.7044 15.5221 28.0419 15.5084 28.3977C15.4946 28.7536 15.6157 29.1015 15.8473 29.372L15.8332 29.4144Z" fill="#3A3A85"/>
+    <path d="M14.6878 14.5686C15.0628 14.5686 15.4224 14.4196 15.6876 14.1544C15.9527 13.8893 16.1017 13.5297 16.1017 13.1547V4.67134C16.1017 4.29635 15.9527 3.93672 15.6876 3.67156C15.4224 3.40641 15.0628 3.25745 14.6878 3.25745C14.3128 3.25745 13.9532 3.40641 13.688 3.67156C13.4229 3.93672 13.2739 4.29635 13.2739 4.67134V13.1547C13.2739 13.5297 13.4229 13.8893 13.688 14.1544C13.9532 14.4196 14.3128 14.5686 14.6878 14.5686Z" fill="#3A3A85"/>
+    <path d="M45.7935 19.1213V42.8464H6.20461V11.7408H10.4463V8.91302H5.85113C5.52062 8.91855 5.19443 8.98913 4.8912 9.12074C4.58796 9.25234 4.31363 9.4424 4.08386 9.68005C3.85409 9.91769 3.67339 10.1983 3.55207 10.5058C3.43076 10.8133 3.37121 11.1417 3.37683 11.4722V43.115C3.37121 43.4455 3.43076 43.7739 3.55207 44.0814C3.67339 44.3889 3.85409 44.6695 4.08386 44.9071C4.31363 45.1448 4.58796 45.3348 4.8912 45.4664C5.19443 45.598 5.52062 45.6686 5.85113 45.6741H46.147C46.4775 45.6686 46.8037 45.598 47.1069 45.4664C47.4101 45.3348 47.6845 45.1448 47.9142 44.9071C48.144 44.6695 48.3247 44.3889 48.446 44.0814C48.5673 43.7739 48.6269 43.4455 48.6213 43.115V17.8771C47.745 18.4285 46.7921 18.8478 45.7935 19.1213Z" fill="#3A3A85"/>
+    <path d="M32.3611 8.91302H18.9292V11.7408H32.757C32.498 10.8204 32.3648 9.86917 32.3611 8.91302Z" fill="#3A3A85"/>
+    <path d="M42.9654 15.9825C46.8698 15.9825 50.0349 12.8174 50.0349 8.91301C50.0349 5.00867 46.8698 1.84357 42.9654 1.84357C39.0611 1.84357 35.896 5.00867 35.896 8.91301C35.896 12.8174 39.0611 15.9825 42.9654 15.9825Z" fill="#3A3A85"/>
+    </g>
+    <defs>
+    <clipPath id="clip0_1966_2171">
+    <rect width="50.9" height="50.9" fill="white" transform="translate(0.548828 0.429688)"/>
+    </clipPath>
+    </defs>
+    </svg>
+    
+                
+                                </div>
+                                <div class="splitsideheader">
+                                    Events Management
+                                </div>
+                                <div class="splitsidebody">
+                                    Our event management software lets you manage your events using just one simple tool. Instead of relying on multiple tools to properly manage all event activities. This means your everyone can access and share information  remotely, at any time of day or night.
+
+                
+                                    <div class="requestdet">
+                                        Request Details  <span> ></span> 
+                                    </div>
+                
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <br>
+                                <div class="corebankingsplitdiv">
+                            <div class="sliptside1">
+                                <div class="icicon">
+                                   
+   
+<svg width="57" height="61" viewBox="0 0 57 61" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="17.0633" cy="16.5353" r="16.2137" fill="#3A3A85" fill-opacity="0.15"/>
+    <g clip-path="url(#clip0_1966_2129)">
+    <path d="M5.39844 9.42151V53.959H11.7609V9.42151H5.39844ZM49.9359 9.42151V53.959H56.2984V9.42151H49.9359ZM18.1234 15.784V22.1465H30.8484V15.784H18.1234ZM24.4859 28.509V34.8715H37.2109V28.509H24.4859ZM30.8484 41.234V47.5965H43.5734V41.234H30.8484Z" fill="#3A3A85"/>
+    </g>
+    <defs>
+    <clipPath id="clip0_1966_2129">
+    <rect width="50.9" height="50.9" fill="white" transform="translate(5.39844 9.42151)"/>
+    </clipPath>
+    </defs>
+    </svg>
+    
+                     
+                                </div>
+                                <div class="splitsideheader">
+                                    Project Management
+                                </div>
+                                <div class="splitsidebody">
+                                    ISSL’s project management software, developed by CAS CRM, a leading provider of CRM solutions, lets you manage your projects using just one simple tool. Instead of relying on multiple software packages for emailing, managing customer information, billing and more, our software solution centralizes this information and makes it available 24/7 from anywhere around the world.
+
+                
+                
+                               
+                                    <div class="requestdet">
+                                        Request Details  <span> ></span> 
+                                    </div>
+                
+                                </div>
+                            </div>
+                            <div class="splitside2">
+                                <div class="icicon">
+                                  
+ 
+<svg width="56" height="61" viewBox="0 0 56 61" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="16.2137" cy="16.5353" r="16.2137" fill="#3A3A85" fill-opacity="0.15"/>
+    <path d="M17.2737 23.7371C16.0153 23.7371 14.7852 23.3639 13.7389 22.6648C12.6926 21.9657 11.8771 20.972 11.3955 19.8094C10.914 18.6468 10.788 17.3675 11.0335 16.1333C11.279 14.8991 11.885 13.7654 12.7748 12.8756C13.6646 11.9858 14.7983 11.3798 16.0325 11.1343C17.2667 10.8888 18.546 11.0148 19.7086 11.4964C20.8712 11.978 21.8648 12.7935 22.564 13.8398C23.2631 14.8861 23.6362 16.1162 23.6362 17.3746C23.6362 19.062 22.9659 20.6804 21.7727 21.8736C20.5795 23.0668 18.9612 23.7371 17.2737 23.7371ZM17.2737 14.1933C16.6445 14.1933 16.0295 14.3799 15.5063 14.7295C14.9832 15.079 14.5754 15.5759 14.3346 16.1572C14.0939 16.7385 14.0309 17.3781 14.1536 17.9952C14.2764 18.6123 14.5793 19.1792 15.0242 19.6241C15.4692 20.069 16.036 20.372 16.6531 20.4947C17.2702 20.6175 17.9098 20.5545 18.4911 20.3137C19.0724 20.0729 19.5693 19.6651 19.9188 19.142C20.2684 18.6188 20.455 18.0038 20.455 17.3746C20.455 16.5309 20.1198 15.7217 19.5232 15.1251C18.9266 14.5285 18.1175 14.1933 17.2737 14.1933ZM42.7237 23.7371C41.4653 23.7371 40.2352 23.3639 39.1889 22.6648C38.1426 21.9657 37.3271 20.972 36.8455 19.8094C36.364 18.6468 36.238 17.3675 36.4835 16.1333C36.729 14.8991 37.335 13.7654 38.2248 12.8756C39.1146 11.9858 40.2483 11.3798 41.4825 11.1343C42.7167 10.8888 43.996 11.0148 45.1586 11.4964C46.3211 11.978 47.3148 12.7935 48.014 13.8398C48.7131 14.8861 49.0862 16.1162 49.0862 17.3746C49.0862 19.062 48.4159 20.6804 47.2227 21.8736C46.0295 23.0668 44.4112 23.7371 42.7237 23.7371ZM42.7237 14.1933C42.0945 14.1933 41.4795 14.3799 40.9563 14.7295C40.4332 15.079 40.0254 15.5759 39.7846 16.1572C39.5439 16.7385 39.4809 17.3781 39.6036 17.9952C39.7264 18.6123 40.0293 19.1792 40.4742 19.6241C40.9192 20.069 41.486 20.372 42.1031 20.4947C42.7202 20.6175 43.3598 20.5545 43.9411 20.3137C44.5224 20.0729 45.0193 19.6651 45.3688 19.142C45.7184 18.6188 45.905 18.0038 45.905 17.3746C45.905 16.5309 45.5698 15.7217 44.9732 15.1251C44.3766 14.5285 43.5675 14.1933 42.7237 14.1933ZM45.905 57.1402H39.5425C38.6988 57.1402 37.8896 56.805 37.293 56.2084C36.6964 55.6118 36.3612 54.8027 36.3612 53.959V42.8246H39.5425V53.959H45.905V39.6433H49.0862V30.0996C49.0862 29.6777 48.9187 29.2731 48.6203 28.9748C48.322 28.6765 47.9175 28.509 47.4956 28.509H37.2838L29.9987 41.234L22.7137 28.509H12.5019C12.08 28.509 11.6754 28.6765 11.3771 28.9748C11.0788 29.2731 10.9112 29.6777 10.9112 30.0996V39.6433H14.0925V53.959H20.455V42.8246H23.6362V53.959C23.6362 54.8027 23.3011 55.6118 22.7045 56.2084C22.1079 56.805 21.2987 57.1402 20.455 57.1402H14.0925C13.2488 57.1402 12.4396 56.805 11.843 56.2084C11.2464 55.6118 10.9112 54.8027 10.9112 53.959V42.8246C10.0675 42.8246 9.25835 42.4894 8.66175 41.8928C8.06515 41.2962 7.72998 40.4871 7.72998 39.6433V30.0996C7.72998 28.834 8.23273 27.6203 9.12763 26.7254C10.0225 25.8305 11.2363 25.3277 12.5019 25.3277H24.5588L29.9987 34.8715L35.4387 25.3277H47.4956C48.7612 25.3277 49.9749 25.8305 50.8698 26.7254C51.7647 27.6203 52.2675 28.834 52.2675 30.0996V39.6433C52.2675 40.4871 51.9323 41.2962 51.3357 41.8928C50.7391 42.4894 49.93 42.8246 49.0862 42.8246V53.959C49.0862 54.8027 48.7511 55.6118 48.1545 56.2084C47.5579 56.805 46.7487 57.1402 45.905 57.1402Z" fill="#3A3A85"/>
+    </svg>
+    
+                      
+                                </div>
+                                <div class="splitsideheader">
+                                    Partner Relationship
+                                </div>
+                                <div class="splitsidebody">
+                                  
+                                    Channel management using specialized CRM software can significantly increase your channel sales. By facilitating joint marketing campaigns, order processing, lead management and sales forecasting, you can boost partner loyalty and expand reseller-based revenue. We offer channel management CRM software that does all that.
+
+                
+                
+                
+                                    <div class="requestdet">
+                                        Request Details  <span> ></span> 
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <br>
+                      
+                    </div>
+                
+                
+                
+                </div>
+
+
+            </div>
+
+            <div id="tab4" class="tab-slider--body">
+                <div class="Bankingsolution">
+                    <div class="bankingsolutiondiv">
+                        <div class="bankingsoltxt">
+                            <div class="intro2">
+                                <div class="intro2heading">CASgenesis - CRM Solution</div>
+                                <div class="intro2body">From sales force automation to channel management, we deploy the award-winning genesisWorld CRM from our CRM partner, CAS-CRM, to provide flexible solutions that can be tailored precisely to your needs and seamlessly extended as your business expands. With an extensive scope of features that gives you valuable insight into your operations and new opportunities.The solution is equipped with many customizable features, has a familiar feel, and is very affordable.
+
+                
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bankingsolimg">
+                            <img src="business-3d-e-wallet-in-a-phone-with-bank-card-stack-of-coins-and-leather-wallet 1 (4).png" alt="">
+                        </div>
+                
+                    </div>
+                
+                    <div class="vixi">
+                        Our CRM solution for marketing, sales, project management and customer relations is your gateway to motivated employees, satisfied customers and increased revenue.
+
+                
+                    </div>
+                
+                    <div class="corebanking">
+                        <br>
+                    
+                        <div class="corebankingsplitdiv">
+                            <div class="sliptside1">
+                                <div class="icicon">
+                                  
+                                    <svg width="57" height="61" viewBox="0 0 57 61" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <circle cx="17.0633" cy="16.5434" r="16.2137" fill="#3A3A85" fill-opacity="0.15"/>
+                                        <path d="M21.3046 18.9734C15.1727 18.9734 10.1702 23.976 10.1702 30.1078C10.1702 30.7791 10.2879 31.401 10.4056 32.0213C9.324 33.612 8.57959 35.4762 8.57959 37.5647C8.57959 43.0444 13.0222 47.4997 18.4844 47.5792C20.4838 49.488 23.1004 50.7859 26.0765 50.7859C29.1336 50.7859 31.7995 49.418 33.8117 47.425C33.9055 47.4313 33.9182 47.4377 34.0296 47.4377C36.5714 47.4377 38.6392 46.0507 40.0581 44.169C40.6911 44.2803 41.3115 44.4235 41.9827 44.4235C48.1146 44.4235 53.1171 39.4209 53.1171 33.2891C53.1171 27.1572 48.1146 22.1547 41.9827 22.1547C40.8772 22.1547 39.8576 22.441 38.8508 22.7385C37.0311 21.4278 34.8504 20.5641 32.439 20.5641C30.9358 20.5641 29.5806 21.0619 28.2636 21.6075C26.3501 20.036 23.9768 18.9734 21.3046 18.9734ZM21.3046 22.1547C23.4726 22.1547 25.4116 23.0136 26.8463 24.4166L27.6798 25.2246L28.7042 24.6774C29.8527 24.0621 31.136 23.7418 32.439 23.7453C34.3058 23.7403 36.1137 24.3987 37.5401 25.6032L38.2607 26.206L39.1355 25.8704C40.3393 25.4028 41.6391 25.2363 42.9218 25.3853C44.2046 25.5344 45.4316 25.9945 46.4961 26.7257C47.5606 27.4569 48.4304 28.437 49.0298 29.5809C49.6293 30.7247 49.9403 31.9977 49.9358 33.2891C49.9395 34.5103 49.6609 35.7159 49.122 36.8118C48.583 37.9077 47.7982 38.8643 46.8287 39.607C45.8592 40.3497 44.7313 40.8585 43.5328 41.0935C42.3344 41.3286 41.0979 41.2837 39.9197 40.9622L38.6838 40.6282L38.1 41.7639C37.3222 43.2496 35.8127 44.2564 34.0296 44.2564L33.5524 44.1992L32.7126 44.1196L32.1654 44.7654C31.4202 45.6556 30.4887 46.3714 29.4366 46.862C28.3844 47.3526 27.2374 47.6061 26.0765 47.6047C24.9524 47.6056 23.8411 47.3666 22.8168 46.9035C21.7926 46.4405 20.879 45.7642 20.1371 44.9197L19.6328 44.3551L18.8821 44.3916C18.5401 44.4044 18.459 44.4235 18.6196 44.4235C17.7178 44.4268 16.8243 44.2517 15.9905 43.9081C15.1568 43.5645 14.3992 43.0592 13.7617 42.4215C13.1241 41.7838 12.619 41.0261 12.2756 40.1923C11.9322 39.3584 11.7573 38.4649 11.7608 37.5631C11.7608 35.9613 12.3335 34.5075 13.2767 33.3209L13.7618 32.7165L13.5757 31.9657C13.2901 30.7965 13.2744 29.5776 13.5298 28.4014C13.7852 27.2252 14.305 26.1226 15.0498 25.1771C15.7946 24.2317 16.7449 23.4682 17.8286 22.9445C18.9123 22.4208 20.101 22.1507 21.3046 22.1547ZM23.3183 30.1078C23.2865 30.1078 23.2611 30.1333 23.2611 30.1714V34.8113C23.2611 34.8479 23.2865 34.8797 23.3183 34.8797H23.8591C23.8957 34.8797 23.9148 34.8479 23.9148 34.8113V30.1699C23.9148 30.138 23.8894 30.1078 23.8575 30.1078H23.3183ZM32.7555 30.1078C32.3706 30.1078 32.0715 30.2128 31.8616 30.4307C31.65 30.6423 31.5005 31.0033 31.4257 31.4249L31.3892 31.6985H30.912C30.912 31.6985 30.8483 31.7175 30.842 31.778L30.7624 32.2202C30.7545 32.2584 30.7736 32.2886 30.8293 32.2886H31.2953L30.8293 34.8861C30.8021 35.0637 30.7585 35.2383 30.6988 35.4078C30.6689 35.5151 30.6205 35.6163 30.5557 35.7068C30.5 35.78 30.4507 35.8309 30.3648 35.8548C30.1897 35.9131 29.9996 35.9069 29.8288 35.8373C29.8288 35.8373 29.781 35.8182 29.7556 35.8738C29.7016 36.0141 29.6496 36.1552 29.5997 36.2969C29.587 36.3399 29.6061 36.3717 29.6315 36.3828C29.6954 36.4074 29.7614 36.4261 29.8288 36.4385C29.9401 36.4703 30.0403 36.4703 30.1278 36.4703C30.3266 36.4703 30.5 36.4385 30.6495 36.3908C30.7992 36.333 30.9332 36.2409 31.0408 36.122C31.1597 35.9823 31.2524 35.8222 31.3144 35.6496C31.3892 35.4587 31.4448 35.2153 31.4941 34.9354L31.9665 32.2886H32.6632C32.6632 32.2886 32.7253 32.2886 32.738 32.2202L32.8112 31.7859C32.8175 31.7414 32.8 31.6985 32.7428 31.6985H32.0731C32.0779 31.6857 32.1208 31.2753 32.2036 31.0527C32.2342 30.9688 32.2831 30.8927 32.3467 30.83C32.3964 30.778 32.4581 30.7392 32.5265 30.717C32.6935 30.6696 32.871 30.6741 33.0354 30.7298C33.1038 30.7473 33.1102 30.7298 33.1293 30.6979L33.2836 30.2573C33.3027 30.208 33.2661 30.1889 33.2518 30.1826C33.1837 30.159 33.1133 30.1425 33.0418 30.1333C32.9476 30.1144 32.8516 30.1059 32.7555 30.1078ZM18.1599 31.6985C17.4712 31.6985 16.9924 32.0834 16.9924 32.6306V32.6433C16.9924 33.2159 17.5205 33.4068 18.0184 33.5372L18.0979 33.5627C18.459 33.6613 18.7691 33.7488 18.7691 33.9842V33.9905C18.7691 34.2085 18.5639 34.3643 18.241 34.3643C18.117 34.3643 17.713 34.3643 17.2787 34.1098C17.2353 34.091 17.1937 34.0681 17.1546 34.0414C17.1292 34.0287 17.0799 34.0096 17.0544 34.0733L16.9049 34.4502C16.8811 34.5075 16.9113 34.5186 16.9176 34.5314C16.9924 34.5759 17.0608 34.6061 17.1292 34.6427C17.5014 34.824 17.8561 34.8797 18.2235 34.8797C18.9743 34.8797 19.4404 34.5139 19.4404 33.9174V33.911C19.4404 33.3575 18.9123 33.1586 18.4224 33.0155L18.3588 32.9964C17.9865 32.8851 17.6636 32.7912 17.6636 32.5669V32.551C17.6636 32.357 17.8498 32.2202 18.1408 32.2202C18.4653 32.2202 18.8439 32.314 19.092 32.4429C19.092 32.4429 19.1668 32.481 19.1922 32.419C19.2113 32.3824 19.3354 32.0707 19.3481 32.0404C19.3593 32.0023 19.3354 31.9768 19.3099 31.9657C18.9799 31.7871 18.6099 31.6952 18.2347 31.6985H18.1599ZM21.2855 31.6985C21.0963 31.6996 20.9074 31.7161 20.7208 31.7478C20.7208 31.7478 20.2548 31.8289 20.0623 31.9704C20.0623 31.9704 20.0241 31.9911 20.0496 32.0468L20.1991 32.419C20.2166 32.4683 20.2675 32.4508 20.2675 32.4508C20.2675 32.4508 20.2786 32.4445 20.2993 32.4381C20.7081 32.2265 21.2235 32.2393 21.2235 32.2393C21.4541 32.2393 21.6275 32.2758 21.7516 32.3633C21.8629 32.4429 21.9265 32.5749 21.9265 32.8357V32.9153C21.7452 32.8914 21.5766 32.8723 21.5766 32.8723C21.4907 32.866 21.3794 32.866 21.2426 32.866C21.0666 32.8644 20.8912 32.8858 20.7208 32.9296C20.5632 32.9664 20.4135 33.031 20.2786 33.1205C20.1536 33.2031 20.05 33.3144 19.9764 33.445C19.8951 33.582 19.8537 33.739 19.8571 33.8983C19.8571 34.0733 19.8889 34.2212 19.9494 34.3452C20.0169 34.4693 20.1128 34.5756 20.2293 34.6554C20.3618 34.7371 20.507 34.7962 20.6588 34.8304C20.8258 34.8622 21.0183 34.8797 21.2235 34.8797C21.4414 34.8797 21.6593 34.8606 21.8693 34.8304C22.0808 34.7986 22.3305 34.7493 22.4037 34.7302C22.4721 34.7175 22.5469 34.6984 22.5469 34.6984C22.6025 34.6872 22.5962 34.6379 22.5962 34.6379V32.8405C22.5962 32.4429 22.4848 32.1518 22.2621 31.972C22.0379 31.7923 21.7086 31.6985 21.2855 31.6985ZM26.0574 31.6985C25.8196 31.6912 25.5829 31.7335 25.3623 31.8225C25.179 31.9022 25.0149 32.02 24.8808 32.1681C24.7467 32.3162 24.6456 32.4912 24.5845 32.6815C24.5224 32.8723 24.4922 33.0839 24.4922 33.3082C24.4922 33.5372 24.5288 33.7488 24.5908 33.9349C24.6544 34.1273 24.7594 34.2959 24.9026 34.4327C25.0394 34.5759 25.2128 34.6872 25.4307 34.762C25.6422 34.8415 25.9031 34.8797 26.2005 34.8797C26.8161 34.8733 27.1326 34.7493 27.2694 34.6809C27.2885 34.6681 27.3124 34.6491 27.2885 34.587L27.1454 34.2275C27.1263 34.1719 27.0658 34.1894 27.0658 34.1894C26.9084 34.2466 26.6984 34.3389 26.1942 34.3389C25.8649 34.3389 25.6215 34.2514 25.4736 34.1098C25.313 33.9667 25.2382 33.7551 25.2255 33.4577H27.3442C27.3442 33.4577 27.3999 33.4577 27.4062 33.4068C27.4062 33.3829 27.481 32.9964 27.3426 32.5558C27.2891 32.3834 27.1959 32.226 27.0706 32.0961C26.9591 31.976 26.8236 31.8806 26.6729 31.8162C26.4777 31.7361 26.2684 31.696 26.0574 31.6985ZM29.0843 31.6985C28.4004 31.6985 27.9152 32.0834 27.9152 32.6306V32.6433C27.9152 33.2159 28.4497 33.4068 28.9412 33.5372L29.0271 33.5627C29.3881 33.6613 29.6983 33.7488 29.6983 33.9842V33.9905C29.6983 34.2085 29.4931 34.3643 29.1639 34.3643C29.0398 34.3643 28.6358 34.3643 28.2015 34.1098C28.1522 34.0844 28.1141 34.0653 28.0775 34.0414C28.0647 34.0351 28.0027 34.0096 27.9773 34.0733L27.8341 34.4502C27.8102 34.5075 27.8405 34.5186 27.8468 34.5314C27.9152 34.5759 27.9836 34.6061 28.0584 34.6427C28.3992 34.8074 28.7743 34.8886 29.1527 34.8797C29.8971 34.8797 30.3696 34.5139 30.3696 33.9174V33.911C30.3696 33.3575 29.8415 33.1586 29.3516 33.0155L29.2832 32.9964C28.9094 32.8851 28.5865 32.7912 28.5865 32.5669V32.551C28.5865 32.357 28.7789 32.2202 29.0637 32.2202C29.3881 32.2202 29.7731 32.314 30.0212 32.4429C30.0212 32.4429 30.096 32.481 30.1214 32.419C30.1695 32.2913 30.2215 32.165 30.2773 32.0404C30.2884 32.0023 30.2646 31.9768 30.2328 31.9657C29.9032 31.7874 29.5338 31.6954 29.1591 31.6985H29.0843ZM34.2857 31.6985C34.0296 31.6985 33.7989 31.7414 33.6065 31.8225C33.4255 31.8999 33.2641 32.0167 33.1341 32.1645C33.0019 32.3091 32.9026 32.4806 32.843 32.6671C32.725 33.0755 32.725 33.509 32.843 33.9174C32.9019 34.1058 33.0013 34.2791 33.1343 34.425C33.2673 34.5709 33.4306 34.686 33.6128 34.762C33.8267 34.8448 34.0548 34.8848 34.2841 34.8797C34.5386 34.8797 34.7613 34.8431 34.9553 34.7556C35.1397 34.6807 35.3054 34.5662 35.4405 34.42C35.5687 34.2747 35.6637 34.1032 35.7188 33.9174C35.7825 33.7233 35.8143 33.5134 35.8143 33.2891C35.8143 33.0712 35.7825 32.8596 35.7188 32.6687C35.6639 32.4824 35.5689 32.3103 35.4405 32.1645C35.3057 32.0164 35.1401 31.8997 34.9553 31.8225C34.7421 31.7368 34.5139 31.6947 34.2841 31.6985H34.2857ZM39.8274 31.6985C39.565 31.6985 39.3296 31.7414 39.1244 31.8225C38.9355 31.8981 38.766 32.0149 38.6281 32.1645C38.4881 32.3056 38.3835 32.4779 38.3227 32.6671C38.2491 32.8661 38.2135 33.077 38.2177 33.2891C38.2177 33.7742 38.3545 34.1639 38.6345 34.4502C38.9128 34.7365 39.3232 34.8797 39.8704 34.8797C40.1933 34.8797 40.5225 34.8161 40.7579 34.7302C40.7579 34.7302 40.8025 34.7127 40.7834 34.6618L40.6275 34.2705C40.61 34.2148 40.548 34.2339 40.548 34.2339C40.4564 34.2719 40.3601 34.2971 40.2617 34.3087C40.1464 34.3266 40.0299 34.3346 39.9133 34.3325C39.6095 34.3325 39.3661 34.253 39.1991 34.0844C39.0242 33.9221 38.9255 33.6549 38.9255 33.2891C38.9319 32.9662 39.013 32.7165 39.1673 32.5256C39.3232 32.3379 39.5538 32.2456 39.864 32.2456C40.1185 32.2456 40.3173 32.2774 40.5225 32.3315C40.5225 32.3315 40.5782 32.3506 40.5973 32.2949C40.653 32.1518 40.6959 32.0532 40.7532 31.8973C40.7707 31.848 40.7277 31.8289 40.715 31.8225C40.5762 31.7827 40.4355 31.7498 40.2935 31.7239C40.1389 31.7049 39.9832 31.6964 39.8274 31.6985ZM42.4233 31.6985C42.1855 31.6912 41.9488 31.7335 41.7282 31.8225C41.5433 31.9004 41.3775 32.0176 41.2424 32.1659C41.1073 32.3142 41.006 32.4901 40.9456 32.6815C40.8871 32.8852 40.8577 33.0962 40.8581 33.3082C40.8581 33.5372 40.89 33.7488 40.9568 33.9349C41.0157 34.1236 41.1207 34.2946 41.2622 34.4327C41.4053 34.5759 41.5803 34.6872 41.7902 34.762C42.0082 34.8415 42.2674 34.8797 42.5601 34.8797C43.1757 34.8733 43.4986 34.7493 43.629 34.6809C43.6545 34.6681 43.6783 34.6491 43.6481 34.587L43.5049 34.2275C43.4859 34.1719 43.4254 34.1894 43.4254 34.1894C43.2743 34.2466 43.058 34.3389 42.5537 34.3389C42.2309 34.3389 41.9891 34.2514 41.8332 34.1098C41.6789 33.9667 41.6041 33.7551 41.5851 33.4577H43.7038C43.7038 33.4577 43.7594 33.4577 43.7722 33.4068C43.7722 33.3829 43.8406 32.9964 43.7038 32.5558C43.6498 32.3833 43.5561 32.2258 43.4302 32.0961C43.3187 31.976 43.1832 31.8806 43.0325 31.8162C42.8395 31.7361 42.6323 31.696 42.4233 31.6985ZM37.8264 31.6985C37.6375 31.6813 37.4473 31.7114 37.2729 31.7859C37.1351 31.8428 37.0117 31.9298 36.9118 32.0404V31.7923C36.9118 31.7541 36.8943 31.7287 36.8561 31.7287H36.3153C36.2787 31.7287 36.2485 31.7541 36.2485 31.7923V34.8177C36.2485 34.8495 36.2803 34.8797 36.3169 34.8797H36.8689C36.907 34.8797 36.9373 34.8479 36.9373 34.8161V33.3082C36.9373 33.1014 36.9627 32.8978 37.0057 32.7674C37.042 32.6538 37.1059 32.5511 37.1918 32.4683C37.2699 32.4014 37.3608 32.351 37.459 32.3204C37.6268 32.2702 37.8053 32.268 37.9743 32.314C38.0125 32.314 38.038 32.2886 38.0491 32.2504C38.0873 32.1645 38.1859 31.8846 38.205 31.8289C38.2082 31.8223 38.2102 31.8152 38.2107 31.8078C38.2111 31.8005 38.2102 31.7932 38.2078 31.7862C38.2054 31.7793 38.2017 31.7728 38.1969 31.7673C38.192 31.7618 38.1861 31.7573 38.1795 31.7541C38.0632 31.7276 37.9452 31.709 37.8264 31.6985ZM26.0081 32.2202C26.288 32.2202 26.4741 32.3204 26.6046 32.5065C26.6906 32.645 26.7399 32.8033 26.7477 32.9662H25.2318C25.2543 32.8011 25.3141 32.6433 25.4068 32.5049C25.5293 32.3204 25.7281 32.2202 26.0081 32.2202ZM42.3756 32.2202C42.654 32.2202 42.8337 32.3204 42.9705 32.5065C43.0573 32.6443 43.1046 32.8033 43.1073 32.9662H41.5962C41.6195 32.8023 41.6769 32.6452 41.7648 32.5049C41.8952 32.3204 42.0941 32.2202 42.374 32.2202H42.3756ZM34.2841 32.2329C34.564 32.2329 34.7613 32.3204 34.8933 32.5065C35.0301 32.6926 35.0985 32.9535 35.0985 33.2891C35.0985 33.6311 35.0301 33.8919 34.8997 34.0844C34.7629 34.2641 34.564 34.358 34.2841 34.358C34.0041 34.358 33.8069 34.2641 33.6812 34.0844C33.5445 33.8919 33.4824 33.6311 33.4824 33.2891C33.4824 32.955 33.546 32.6926 33.6749 32.5065C33.8053 32.3267 34.0041 32.2329 34.2841 32.2329ZM21.3475 33.3622C21.6529 33.3702 21.9265 33.4131 21.9265 33.4131V34.3087C21.9265 34.3087 21.6529 34.3564 21.3539 34.3771C20.9197 34.3946 20.7272 34.2578 20.7336 34.2578C20.6461 34.1957 20.6397 34.1782 20.6079 34.1401C20.5612 34.0638 20.5395 33.9748 20.5459 33.8856C20.5459 33.7106 20.6095 33.5865 20.7336 33.507C20.7336 33.507 20.9133 33.3575 21.3475 33.3638V33.3622Z" fill="#3A3A85"/>
+                                        </svg>
+                                    
+      
+                                </div>
+                                <div class="splitsideheader">
+                                    Sales Force Automation
+                                </div>
+                                <div class="splitsidebody">
+                                    
+Our Sales Force Automation (SFA) solution combines all the features your team will need to identify leads, manage opportunities, close deals and keep your customers happy. The sales force automation process also means your sales team can be on the road without missing a beat. Accessing client information out of the office, as well as creating automatic notifications and actions, has never been so easy.
+
+                
+                           
+                                    <div class="requestdet">
+                                        Request Details  <span> ></span> 
+                                    </div>
+                
+                                </div>
+                            </div>
+                            <div class="splitside2">
+                                <div class="icicon">
+                
+   
+<svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <g clip-path="url(#clip0_1966_2171)">
+    <path d="M15.8332 29.4144L23.4116 36.9929L37.6212 22.7833C37.8528 22.5128 37.9739 22.1649 37.9601 21.809C37.9464 21.4532 37.7989 21.1156 37.5471 20.8638C37.2952 20.612 36.9577 20.4645 36.6019 20.4508C36.246 20.437 35.8981 20.5581 35.6276 20.7897L23.4116 32.9491L17.8409 27.3784C17.5704 27.1468 17.2225 27.0257 16.8666 27.0395C16.5108 27.0532 16.1732 27.2007 15.9214 27.4525C15.6696 27.7044 15.5221 28.0419 15.5084 28.3977C15.4946 28.7536 15.6157 29.1015 15.8473 29.372L15.8332 29.4144Z" fill="#3A3A85"/>
+    <path d="M14.6878 14.5686C15.0628 14.5686 15.4224 14.4196 15.6876 14.1544C15.9527 13.8893 16.1017 13.5297 16.1017 13.1547V4.67134C16.1017 4.29635 15.9527 3.93672 15.6876 3.67156C15.4224 3.40641 15.0628 3.25745 14.6878 3.25745C14.3128 3.25745 13.9532 3.40641 13.688 3.67156C13.4229 3.93672 13.2739 4.29635 13.2739 4.67134V13.1547C13.2739 13.5297 13.4229 13.8893 13.688 14.1544C13.9532 14.4196 14.3128 14.5686 14.6878 14.5686Z" fill="#3A3A85"/>
+    <path d="M45.7935 19.1213V42.8464H6.20461V11.7408H10.4463V8.91302H5.85113C5.52062 8.91855 5.19443 8.98913 4.8912 9.12074C4.58796 9.25234 4.31363 9.4424 4.08386 9.68005C3.85409 9.91769 3.67339 10.1983 3.55207 10.5058C3.43076 10.8133 3.37121 11.1417 3.37683 11.4722V43.115C3.37121 43.4455 3.43076 43.7739 3.55207 44.0814C3.67339 44.3889 3.85409 44.6695 4.08386 44.9071C4.31363 45.1448 4.58796 45.3348 4.8912 45.4664C5.19443 45.598 5.52062 45.6686 5.85113 45.6741H46.147C46.4775 45.6686 46.8037 45.598 47.1069 45.4664C47.4101 45.3348 47.6845 45.1448 47.9142 44.9071C48.144 44.6695 48.3247 44.3889 48.446 44.0814C48.5673 43.7739 48.6269 43.4455 48.6213 43.115V17.8771C47.745 18.4285 46.7921 18.8478 45.7935 19.1213Z" fill="#3A3A85"/>
+    <path d="M32.3611 8.91302H18.9292V11.7408H32.757C32.498 10.8204 32.3648 9.86917 32.3611 8.91302Z" fill="#3A3A85"/>
+    <path d="M42.9654 15.9825C46.8698 15.9825 50.0349 12.8174 50.0349 8.91301C50.0349 5.00867 46.8698 1.84357 42.9654 1.84357C39.0611 1.84357 35.896 5.00867 35.896 8.91301C35.896 12.8174 39.0611 15.9825 42.9654 15.9825Z" fill="#3A3A85"/>
+    </g>
+    <defs>
+    <clipPath id="clip0_1966_2171">
+    <rect width="50.9" height="50.9" fill="white" transform="translate(0.548828 0.429688)"/>
+    </clipPath>
+    </defs>
+    </svg>
+    
+                
+                                </div>
+                                <div class="splitsideheader">
+                                    Events Management
+                                </div>
+                                <div class="splitsidebody">
+                                    Our event management software lets you manage your events using just one simple tool. Instead of relying on multiple tools to properly manage all event activities. This means your everyone can access and share information  remotely, at any time of day or night.
+
+                
+                                    <div class="requestdet">
+                                        Request Details  <span> ></span> 
+                                    </div>
+                
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <br>
+                                <div class="corebankingsplitdiv">
+                            <div class="sliptside1">
+                                <div class="icicon">
+                                   
+   
+<svg width="57" height="61" viewBox="0 0 57 61" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="17.0633" cy="16.5353" r="16.2137" fill="#3A3A85" fill-opacity="0.15"/>
+    <g clip-path="url(#clip0_1966_2129)">
+    <path d="M5.39844 9.42151V53.959H11.7609V9.42151H5.39844ZM49.9359 9.42151V53.959H56.2984V9.42151H49.9359ZM18.1234 15.784V22.1465H30.8484V15.784H18.1234ZM24.4859 28.509V34.8715H37.2109V28.509H24.4859ZM30.8484 41.234V47.5965H43.5734V41.234H30.8484Z" fill="#3A3A85"/>
+    </g>
+    <defs>
+    <clipPath id="clip0_1966_2129">
+    <rect width="50.9" height="50.9" fill="white" transform="translate(5.39844 9.42151)"/>
+    </clipPath>
+    </defs>
+    </svg>
+    
+                     
+                                </div>
+                                <div class="splitsideheader">
+                                    Project Management
+                                </div>
+                                <div class="splitsidebody">
+                                    ISSL’s project management software, developed by CAS CRM, a leading provider of CRM solutions, lets you manage your projects using just one simple tool. Instead of relying on multiple software packages for emailing, managing customer information, billing and more, our software solution centralizes this information and makes it available 24/7 from anywhere around the world.
+
+                
+                
+                               
+                                    <div class="requestdet">
+                                        Request Details  <span> ></span> 
+                                    </div>
+                
+                                </div>
+                            </div>
+                            <div class="splitside2">
+                                <div class="icicon">
+                                  
+ 
+<svg width="56" height="61" viewBox="0 0 56 61" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="16.2137" cy="16.5353" r="16.2137" fill="#3A3A85" fill-opacity="0.15"/>
+    <path d="M17.2737 23.7371C16.0153 23.7371 14.7852 23.3639 13.7389 22.6648C12.6926 21.9657 11.8771 20.972 11.3955 19.8094C10.914 18.6468 10.788 17.3675 11.0335 16.1333C11.279 14.8991 11.885 13.7654 12.7748 12.8756C13.6646 11.9858 14.7983 11.3798 16.0325 11.1343C17.2667 10.8888 18.546 11.0148 19.7086 11.4964C20.8712 11.978 21.8648 12.7935 22.564 13.8398C23.2631 14.8861 23.6362 16.1162 23.6362 17.3746C23.6362 19.062 22.9659 20.6804 21.7727 21.8736C20.5795 23.0668 18.9612 23.7371 17.2737 23.7371ZM17.2737 14.1933C16.6445 14.1933 16.0295 14.3799 15.5063 14.7295C14.9832 15.079 14.5754 15.5759 14.3346 16.1572C14.0939 16.7385 14.0309 17.3781 14.1536 17.9952C14.2764 18.6123 14.5793 19.1792 15.0242 19.6241C15.4692 20.069 16.036 20.372 16.6531 20.4947C17.2702 20.6175 17.9098 20.5545 18.4911 20.3137C19.0724 20.0729 19.5693 19.6651 19.9188 19.142C20.2684 18.6188 20.455 18.0038 20.455 17.3746C20.455 16.5309 20.1198 15.7217 19.5232 15.1251C18.9266 14.5285 18.1175 14.1933 17.2737 14.1933ZM42.7237 23.7371C41.4653 23.7371 40.2352 23.3639 39.1889 22.6648C38.1426 21.9657 37.3271 20.972 36.8455 19.8094C36.364 18.6468 36.238 17.3675 36.4835 16.1333C36.729 14.8991 37.335 13.7654 38.2248 12.8756C39.1146 11.9858 40.2483 11.3798 41.4825 11.1343C42.7167 10.8888 43.996 11.0148 45.1586 11.4964C46.3211 11.978 47.3148 12.7935 48.014 13.8398C48.7131 14.8861 49.0862 16.1162 49.0862 17.3746C49.0862 19.062 48.4159 20.6804 47.2227 21.8736C46.0295 23.0668 44.4112 23.7371 42.7237 23.7371ZM42.7237 14.1933C42.0945 14.1933 41.4795 14.3799 40.9563 14.7295C40.4332 15.079 40.0254 15.5759 39.7846 16.1572C39.5439 16.7385 39.4809 17.3781 39.6036 17.9952C39.7264 18.6123 40.0293 19.1792 40.4742 19.6241C40.9192 20.069 41.486 20.372 42.1031 20.4947C42.7202 20.6175 43.3598 20.5545 43.9411 20.3137C44.5224 20.0729 45.0193 19.6651 45.3688 19.142C45.7184 18.6188 45.905 18.0038 45.905 17.3746C45.905 16.5309 45.5698 15.7217 44.9732 15.1251C44.3766 14.5285 43.5675 14.1933 42.7237 14.1933ZM45.905 57.1402H39.5425C38.6988 57.1402 37.8896 56.805 37.293 56.2084C36.6964 55.6118 36.3612 54.8027 36.3612 53.959V42.8246H39.5425V53.959H45.905V39.6433H49.0862V30.0996C49.0862 29.6777 48.9187 29.2731 48.6203 28.9748C48.322 28.6765 47.9175 28.509 47.4956 28.509H37.2838L29.9987 41.234L22.7137 28.509H12.5019C12.08 28.509 11.6754 28.6765 11.3771 28.9748C11.0788 29.2731 10.9112 29.6777 10.9112 30.0996V39.6433H14.0925V53.959H20.455V42.8246H23.6362V53.959C23.6362 54.8027 23.3011 55.6118 22.7045 56.2084C22.1079 56.805 21.2987 57.1402 20.455 57.1402H14.0925C13.2488 57.1402 12.4396 56.805 11.843 56.2084C11.2464 55.6118 10.9112 54.8027 10.9112 53.959V42.8246C10.0675 42.8246 9.25835 42.4894 8.66175 41.8928C8.06515 41.2962 7.72998 40.4871 7.72998 39.6433V30.0996C7.72998 28.834 8.23273 27.6203 9.12763 26.7254C10.0225 25.8305 11.2363 25.3277 12.5019 25.3277H24.5588L29.9987 34.8715L35.4387 25.3277H47.4956C48.7612 25.3277 49.9749 25.8305 50.8698 26.7254C51.7647 27.6203 52.2675 28.834 52.2675 30.0996V39.6433C52.2675 40.4871 51.9323 41.2962 51.3357 41.8928C50.7391 42.4894 49.93 42.8246 49.0862 42.8246V53.959C49.0862 54.8027 48.7511 55.6118 48.1545 56.2084C47.5579 56.805 46.7487 57.1402 45.905 57.1402Z" fill="#3A3A85"/>
+    </svg>
+    
+                      
+                                </div>
+                                <div class="splitsideheader">
+                                    Partner Relationship
+                                </div>
+                                <div class="splitsidebody">
+                                  
+                                    Channel management using specialized CRM software can significantly increase your channel sales. By facilitating joint marketing campaigns, order processing, lead management and sales forecasting, you can boost partner loyalty and expand reseller-based revenue. We offer channel management CRM software that does all that.
+
+                
+                
+                
+                                    <div class="requestdet">
+                                        Request Details  <span> ></span> 
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <br>
+                      
+                    </div>
+                
+                
+                
+                </div>
+            </div>
+            <div id="tab5" class="tab-slider--body">
+
+                <div class="Bankingsolution">
+                    <div class="bankingsolutiondiv">
+                        <div class="bankingsolimg">
+                            <img src="isslserv/mobile-encryption/rafiki.png" alt="">
+                        </div>
+                        <div class="bankingsoltxt">
+                            <div class="introtext">
+                                Our strong authentication solutions are designed to protect your business, employees and customers across a range of different industries.
+
+                
+                            </div>
+                
+                            <div class="intro2">
+                                <div class="intro2heading">Two-factor authentication</div>
+                                <div class="intro2body">ISSL’s strong authentication (two-factor authentication) solutions are designed to protect your business, employees and customers across a range of different industries. By combining easy-to-use One Time Password (OTP) tokens and smart cards for password authentication, along with reliable authentication system software, you can increase your network security, computer security and information security quickly and at low cost.
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                
+
+                
+                
+                    <div class="bankingsolutiondiv">
+                        <div class="bankingsoltxt">
+                            <div class="introtext">
+                                <div class="intro2heading">Online Application Security</div>
+<div class="intro1body">
+    Online security for your applications can significantly improve overall productivity, but it can leave you open to security breaches. By using a password authentication system for access to your company’s applications, you can allow your users anytime/anywhere access without compromising on security.
+
+</div>
+                
+                
+                            </div>
+                
+                            <div class="intro2">
+                                <div class="intro2heading">Network Security</div>
+                                <div class="intro2body">Whether your customers just need to check their balance online or are performing more complicated banking transactions, their accounts are at risk of savvy hackers. By integrating two-factor authentication technologies into your customers’ log-in process, you are ensuring information security for your customers and a safe online and mobile banking experience. Our user authentication software and hardware can be used for all banking transactions, from wire transfers to checking individual bank accounts.
+
+                
+                                </div>
+                            </div>
+                        </div>
+                
+                        <div class="bankingsolimg desm">
+                            <img src="isslserv (1)/mobile-encryption/pana.png" alt="">
+                        </div>
+                
+                    </div>
+
+
+                    <div class="bankingsolutiondiv">
+                        <div class="bankingsolimg">
+                            <img src="isslserv (2)/mobile-encryption/amico.png" alt="">
+                        </div>
+                        <div class="bankingsoltxt">
+
+                
+                            <div class="intro2">
+                                <div class="intro2heading">Banking Security</div>
+                                <div class="intro2body">Providing network access to your employees, customers and partners can significantly increase your company’s network security. However, optimal productivity relies on allowing access to your networks at any time. To identify the right user authentication solution for you, we will look at your existing remote access security system, types of people who require remote access to your networks (employees, vendors, etc.), areas of operation, number of employees and budget.
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+                
+                            <div class="soughtsoltitle" style="padding-top: 50px;">
+                                <br>
+                                <br>
+                                How Strong User Authentication Works
+            </div>
+
+            <div class="bankingsolutiondiv">
+
+                <div class="bankingsoltxt">
+
+        
+                    <div class="intro2">
+                      
+                        <div class="twostep">
+                            Whether you are providing online bank account access to your customers or allowing employees to access company files remotely, the days of providing just single password authentication are over. 
+                            Today, <b>two-factor authentication</b> is the only way you can increase security for networks, applications and banking activities as it requires two levels of authentication:
+                           
+                        <br>
+                        <br>
+                                <li> Something known – PIN or password.</li>
+                                <li> Something owned – Token or smart card</li>
+                           
+                                      
+                            
+
+
+                        </div>
+                        <br>
+                        <br>
+                        <div class="twostep">
+        The <b>two most common two-factor authentication solutions</b> are: 
+        <br>
+        <br>
+        <li>One Time Password (OTP) tokens</li>  
+        <li>Smart cards.</li>   
+        <br>
+        Both of these types of devices generate a password that is valid for only one login session or transaction. They are quick and easy to use and will immediately add an additional level of information security to your business and customers.
+
+                        </div>
+                    </div>
+                </div>
+
+                                <div class="bankingsolimg">
+                    <img src="amico.png" alt="">
+                </div>
+            </div>
+
+                            </div> 
+        </div>
+    </div>
+
+
+    <div class="connectwithus">
+<div class="connectdiv">
+    <div class="connecttext">Connect with ISSL</div>
+    <div class="connectbtn">
+        <input type="button" value="Contact Us" class="contactbtn button1">
+    </div>
+</div>
+    </div>
+
+
+    <script>
+        const navToggler = document.querySelector(".nav-toggler");
+    navToggler.addEventListener("click", navToggle);
+    
+    function navToggle() {
+       navToggler.classList.toggle("active");
+       const nav = document.querySelector(".nav");
+       nav.classList.toggle("open");
+       if(nav.classList.contains("open")){
+           nav.style.maxHeight = nav.scrollHeight + "px";
+       }
+       else{
+           nav.removeAttribute("style");
+       }
+    } 
+    </script>
+    
+    <script>
+        window.addEventListener('scroll',(e)=>{
+          const nav = document.querySelector('.header');
+          if(window.pageYOffset>0){
+            nav.classList.add("add-shadow");
+          }else{
+            nav.classList.remove("add-shadow");
+          }
+        });
+      </script>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
+        <script>
+            $("document").ready(function(){
+  $(".tab-slider--body").hide();
+  $(".tab-slider--body:first").show();
+});
+
+$(".tab-slider--nav li").click(function() {
+  $(".tab-slider--body").hide();
+  var activeTab = $(this).attr("rel");
+  $("#"+activeTab).fadeIn();
+	if($(this).attr("rel") == "tab2"){
+		$('.tab-slider--tabs').addClass('slide');
+	}	
+    if($(this).attr("rel") == "tab3"){
+		$('.tab-slider--tabs').addClass('slide');
+	}
+    if($(this).attr("rel") == "tab4"){
+		$('.tab-slider--tabs').addClass('slide');
+	}
+    if($(this).attr("rel") == "tab5"){
+		$('.tab-slider--tabs').addClass('slide');
+	}
+    else{
+		$('.tab-slider--tabs').removeClass('slide');
+	}
+  $(".tab-slider--nav li").removeClass("active");
+  $(this).addClass("active");
+});
+        </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
