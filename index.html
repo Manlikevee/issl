@@ -1,153 +1,966 @@
 <!DOCTYPE html>
-
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
-
-        <header class="header">
-            <div class="container">
-                <div class="row align-items-center justify-content-between">
-                    <div class="logo">
-                       <a href="#">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="solutions.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="row align-items-center justify-content-between">
+                <div class="logo">
+                   <a href="index.html">
+                
+                    <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <rect width="60" height="60" fill="url(#pattern0)"/>
+                        <defs>
+                        <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
+                        <use xlink:href="#image0_1964_1593" transform="scale(0.00444444)"/>
+                        </pattern>
+                        <image id="image0_1964_1593" width="225" height="225" xlink:href="data:image/png;base64,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"/>
+                        </defs>
+                        </svg>
                         
-    <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-        <rect width="60" height="60" fill="url(#pattern0)"/>
-        <defs>
-        <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
-        <use xlink:href="#image0_858_960" transform="scale(0.0166667)"/>
-        </pattern>
-        <image id="image0_858_960" width="60" height="60" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAA8CAYAAAA6/NlyAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTQ1IDc5LjE2MzQ5OSwgMjAxOC8wOC8xMy0xNjo0MDoyMiAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTkgKFdpbmRvd3MpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjFBM0Q4NzU3Q0IzRTExRUFBNzVGQTBGQjMyNkJENUI0IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjFBM0Q4NzU4Q0IzRTExRUFBNzVGQTBGQjMyNkJENUI0Ij4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6MUEzRDg3NTVDQjNFMTFFQUE3NUZBMEZCMzI2QkQ1QjQiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6MUEzRDg3NTZDQjNFMTFFQUE3NUZBMEZCMzI2QkQ1QjQiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz6hhkIMAAAFcUlEQVR42uybf4hVRRTH39N1NbWe2Iraaj8tdUsN0k0oywzLMCwKQ4p06fePBUuLfhmtgUUJWxFuuohYRqLtH4EWRpRrKK39XFfC/BFuGm5btqyVqKvt9j1wLlyGM/Nm7sx7L/Ed+LA47557z/fOzDnn3vdM9/T0pM4k65U6w6wouCi4KPj0tpIcnrsfuBZUgnFgLBgGBvF1O2LsBy1gG9gOTuYqqHTgstQXzAL3ghtB/wTn+Ad8AtaBDaHFhxI8EDwGngDDA8bXBpaDZeDPIGckwZ7MAYd6cmt/g5fBQN94Q8xwPlu1g2ABaCjkks53b/orGBkkS7dnMtaOQ48cKVRl2ZqvOkzlZD04u8CltCkfgi/kGjk7cBZOYl/lWvAQ8Bmo4H+fV0Cxx0GzMnYJmB6q00qDtWBUbMxH8DfgC/Ad+A0cBifAAF5F1JFdB24ApYI/+XUpYxTbSnA5+MtX8FzumOI2zENwpeGzndxZvcL54g4wH4yPHbNN8LsIjACLwZM+S5ru+hJhvDwPS7cTrAITwN3ggCFhXcV/q8FoH8H3acTlO2nRlhoDajUJa1JstS5xajyUOtzCe0q1RtpjsTrs0niUcVmLnOlvt8fNGAx+B71jsVzJsTvt4Us1Yn2T1mHN2CFuG+kx8VuwBbRanG96TGyUZBeCea6Cpxkuogru0mRUl1kvU5IT2dfgDX5M1K2iW4WxOeBZftKy3sPXCGNHQT2YKiQ3ShZ3gkW855oD9NiVfK5VPHNSUr1dGC81zbBuD//AeyHFS+stsJqzp20v/RA/y6YDJC6KZYcydg94X3N8C2d46yVNtfZnrm10l08lCLKeE1K9p2iakXZhvNrgM54bmVbbJb2CO5c1CcVGRh3QI56zu4m7MnXLTRa6LjWhWe/hGm75XKyPsHqoU3vKQyzF8LQmvgdAhmda2l9Xh3jFcz3YDMqFzzaC1WAmqAJ7A7zaqRauczNYqoxdBn5SfJskDa5CI7tLOObhwO+xlgvX6Ae2ggHCZ4PApph/exLBqtDI6oRjB4PjgcQ2gN7CNehF3oeGeEvAWj7HCRfBOqGR7dP4NQQQuwaUCueeELuhG8AQTQx0o94F/7oI3mcR2DjBb5an2NdBWjhvBuxWjv0FVGji7wVecxG8zCK4RYIfzcwfCYTSzD2qiSXNy1iyDjDFJfHqPrjJIshmje/bjmL3gImGIF/N4n8M3OYruMRypqRAKy2FdoP3wDmGABdYnuskfwOSWDBRa3GhOo3vrix+31ssxRrHlXIKzPURPIZnwWSd4CzB93nN8TvA/byCss1GXYJc0M39QCLBxEcWF3lQ8LsAHABHuQNa6ZpcOFnVcD11sUYfwRMtZnk3lwHXNnUa+BI8l+W488E7XIZsrMpHMLHO4iKzHYROBVsU/6Wa+qsyFFwBxoKLhTjaNFvMSXA5fz9rsl0W+1ISGrcPQF+HG5cRzrHQJ2nFqUq4l23a1Lht5yWcRHAr6B9KcIpnwGRUt88V/B7nOmlrnZxp046CZ/rWYRVqEFqyBFtv6Nw6HLNtM6+scuWJbDJ4Buy0uK6XYGIElxtTHbzFUNf3JHyo6DKskiaXvZ/khyGjwEFDcG2GRzeaoc8DviTYa7hWMMHESGVJqbZZ80xL9AErAoj9keNI5UNw9EplY4I+O2I+979JrJFXSyqfgqP2r9pQpxdn8Z/BWdnWqM18ybIXz4ngiOFctqQ29IUsvhWWb1g+BqN9Yw0lOP7eab2wVGs1L+UiyjRd2DFubSeFijG04HhSe5EfByP7NEtGLeWnqv38YmAeNxdBYwv9a1rJ6PcXM8AU/lr0Tf5VUEEsH4L/V1b8LwBFwUXBRcGnlf0nwABIuFH92Zx3CgAAAABJRU5ErkJggg=="/>
-        </defs>
-        </svg>
-                       </a>
-                    </div>
-                    <button type="button" class="nav-toggler">
-                       <span></span>
-                    </button>
-                    <nav class="nav">
-                       <ul>
-                          <li><a href="index.html" class="active">Home</a></li>
-                          <li><a href="index2.html" >Company</a></li>
-                          <li><a href="solutions.html">Services</a></li>
-                          <li><a href="#">Products</a></li>
-                          <li><a href="#">Contact</a></li>
-                       </ul>
-                    </nav>
+                   </a>
                 </div>
+                <button type="button" class="nav-toggler">
+                   <span></span>
+                </button>
+                <nav class="nav">
+                   <ul>
+                      <li><a href="#" >About</a></li>
+                      <li><a href="#" >What we do</a></li>
+                      <li><a href="digitalproduct.html">Solutions</a></li>
+                      <li><a href="#">Technologies</a></li>
+                      <li><a href="digitalproduct copy.html" >Products</a></li>
+                      <li><a href="#">Cloud Services</a></li>
+                      <li><a href="#">Careers</a></li>
+                   </ul>
+                </nav>
             </div>
-         </header>
+        </div>
+     </header>
+
+     <style>
+        .body {
+          font-family: "Poppins", sans-serif;
+          background-color: #f5f5f5;
+          overflow: hidden;
+        }
+      
+        .first {
+          width: 100vw;
+          /* height: 50vh; */
+          position: relative;
+          /* background-color: blue; */
+          display: flex;
+          flex-direction: column;
+          /* align-items: center; */
+          /* justify-content: center; */
+          /* padding-right: 5rem; */
+        }
+        .first-max {
+          background-image: url(https://github.com/Gbolahan2003/issl/blob/main/src/images/Rectangle125.png?raw=true);
+          height: 90vh;
+          display: flex;
+          /* justify-content: center; */
+          align-items: center;
+          background-size: cover;
+          background-repeat: no-repeat;
+          width: 100vw;
+        }
+        .hero {
+          display: flex;
+        }
+        ion-icon {
+          margin-top: 13px;
+          width: 13px;
+          color: blue;
+        }
+        .ion-icon img {
+          margin-top: -1px;
+        }
+        .icon-inner svg {
+          margin-top: 4px;
+        }
+        svg {
+          margin-top: 4px;
+        }
+      
+        .hero-1 {
+          padding-left: 2rem;
+          width: 70vw;
+        }
+      
+        .first-2 {
+          color: #fff;
+          font-size: 3.5rem;
+          font-weight: 700;
+          margin-bottom: 2rem;
+        }
+        .main-nav {
+          color: #fff;
+          font-size: 2.5rem;
+          text-decoration: none;
+          display: inline-block;
+          transition: all 0.8s;
+        }
+        .sec-nav {
+        }
+        .main-nav:hover,
+        .main-nav:active {
+          transform: scale(1.1);
+          color: rgb(182, 172, 190);
+        }
+      
+        .dd {
+          font-size: 17px;
+          color: white;
+        }
+        .ghh {
+          color: red;
+          font-size: 17px;
+        }
+        .flex {
+          display: flex;
+          justify-content: center;
+          margin: auto;
+          text-decoration: none;
+          gap: 10px;
+          margin: auto;
+          background: blue;
+        }
+      
+        .sec {
+          background-color: #fff;
+          padding-bottom: 0.2rem;
+          padding-top: 2rem;
+        }
+      
+        .second {
+          padding-right: 2rem;
+          /* width: 95vw; */
+          display: flex;
+          margin: 2rem;
+          /* background-color: red; */
+          align-items: center;
+          justify-content: center;
+          margin-top: 7rem;
+          margin-bottom: 10rem;
+          flex-direction: column;
+        }
+      
+        .headers {
+          /* margin: 5rem; */
+          font-size: 1.3rem;
+          margin: 2rem;
+          margin-bottom: 5rem;
+          text-align: center;
+        }
+        .girl {
+          margin: 1rem;
+        }
+        .grid-2-cols {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 2rem;
+        }
+        .grid-3-cols {
+          display: grid;
+          grid-template-columns: 1fr 1fr 1fr;
+          gap: 2rem;
+          border: none;
+        }
+        .grid-4-cols {
+          display: grid;
+          grid-template-columns: 1fr 1fr 1fr 1fr;
+        }
+        .sec {
+          width: 100vw;
+        }
+      
+        .card {
+          width: 100%;
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          gap: 1rem;
+          margin: 1rem;
+          border: none;
+        }
+      
+        .ca-1 {
+          font-weight: 500;
+          font-size: 1.6rem;
+        }
+      
+        .ca-3 {
+          font-weight: 500;
+          margin-top: auto;
+        }
+      
+        .shevron {
+          margin-left: 0.3rem;
+          text-decoration: none;
+          font-size: 1.4rem;
+          color: rgb(255, 24, 24);
+          transition: all 1s;
+        }
+        .shevron:hover,
+        .shevron:active {
+          transform: scale(1.1);
+        }
+      
+        .third {
+          display: flex;
+          margin: 0;
+          justify-content: center;
+          align-items: center;
+          /* background-color: red; */
+        }
+      
+        .third-1 {
+          margin: 0;
+          /* padding: 3rem; */
+        }
+      
+        .three-2 {
+          margin-left: 3rem;
+        }
+        .im {
+          width: 35rem;
+        }
+        .death {
+          margin-top: 1.5rem;
+        }
+        .ca {
+          margin-top: 1rem;
+          font-size: 1.2rem;
+        }
+      
+        .hi {
+          background-color: #f5070f;
+          width: 80px;
+          height: 2px;
+        }
+      
+        
+        .hero {
+          display: flex;
+        }
+      
+        .forth {
+          padding: 2rem;
+          padding-top: 3rem;
+          margin-top: 5rem;
+          background-color: #fff;
+        }
+        .forth-alpha {
+          margin-top: 2.5rem;
+          width: 60vw;
+          margin-bottom: 3.5rem;
+        }
+        .for-1 {
+          background-color: #3a3a85;
+          color: #fff;
+        }
+        .for-2 {
+          background: #f1f1f1;
+        }
+        .fo-1 {
+          margin-top: 0.5rem;
+        }
+        .for {
+          padding: 1rem;
+          border-radius: 22px;
+          display: flex;
+          flex-direction: column;
+          gap: 1rem;
+          padding-bottom: 2rem;
+        }
+        .fo-2 {
+          font-size: 1.3rem;
+          font-weight: 500;
+        }
+      
+        .fo-4 {
+          display: flex;
+          flex-direction: column;
+          padding: 1rem;
+          padding-bottom: 2.3rem;
+          gap: 0.7rem;
+          background-color: #f1f1f1;
+          border-radius: 19.5px;
+        }
+      
+        .forth-3 {
+          margin-top: 3rem;
+        }
+        .f {
+          margin-top: 0.5rem;
+        }
+        .fifth {
+          background-color: #fff;
+          padding: 2rem;
+          padding-top: 3rem;
+          padding-bottom: 15rem;
+        }
+        .fyi {
+          /* width: 20rem; */
+          position: relative;
+        }
+        .y {
+          width: 100%;
+          position: absolute;
+          /* z-index: -1; */
+        }
+      
+        .i {
+          margin-top: 3rem;
+          width: 100%;
+          margin-left: 2rem;
+        }
+        .am {
+          font-size: 0.9rem;
+          margin-left: -3rem;
+        }
+        .am-2 {
+          padding: 1rem;
+          width: 55%;
+          transform: translate(60%, -40%);
+          background: #ffffff;
+          box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.25);
+        }
+        .m-3 {
+          margin-bottom: 4.3rem;
+        }
+        .y-2 {
+          background-color: #fff;
+          transform: translate(60%, 10%);
+          /* width: 19rem; */
+          /* width: inherit; */
+          margin: auto;
+      
+          padding: 1rem;
+          padding-right: -1rem;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          gap: 3rem;
+          box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.25);
+        }
+        .sec-nav {
+          color: black;
+          font-size: 1rem;
+          text-decoration: none;
+          transition: all 1s;
+        }
+        .sec-nav:hover,
+        .sec-nav:active {
+          color: rgb(18, 6, 93);
+          transform: scale(1);
+          text-decoration: unset;
+        }
+      
+        .cat {
+          margin-top: 0.5rem;
+          font-weight: 500;
+        }
+        .h {
+          margin-bottom: 2rem;
+        }
+      
+        .sec,
+        .third,
+        .forth,
+        .fifth {
+          padding: 2rem;
+        }
+        .ion-icon {
+          color: blue;
+          margin-top: 10px;
+        }
+      
+        * {
+          padding: 0;
+          margin: 0;
+          box-sizing: border-box;
+        }
+      
+        @media (max-width: 71em) {
+          .first-2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+          }
+        }
+      
+        @media (max-width: 66em) {
+          .third-1 {
+            margin: 0;
+            display: flex;
+            gap: 0.5rem;
+          }
+          .three-2 {
+            margin: 0;
+          }
+        }
+      
+        @media (max-width: 61em) {
+          .third-1 {
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 0.1rem;
+          }
+        }
+        @media (max-width: 55em) {
+          .headers {
+            font-size: 1rem;
+          }
+          .girl {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 0.6rem;
+          }
+          .ca-2 {
+            font-size: 0.8rem;
+          }
+        }
+        @media (max-width: 51em) {
+          .first-2 {
+            font-size: 2rem;
+          }
+          .frst-3 {
+            font-size: 1.5rem;
+          }
+        }
+        @media (max-width: 47em) {
+          .grid-3-cols {
+            gap: 0.5rem;
+          }
+        }
+        @media (max-width: 45em) {
+          .second {
+            display: flex;
+            flex-direction: column;
+            margin: 0.3rem;
+            justify-content: center;
+            align-items: center;
+          }
+          .death {
+            /* margin: 1rem;
+                padding: 0.5rem; */
+          }
+          .im {
+            width: 80vw;
+          }
+        }
+      
+        @media (max-width: 43em) {
+          .grid-3-cols {
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            row-gap: 1.3rem;
+          }
+        }
+        @media (max-width: 43em) {
+          .grid-2-cols,
+          .grid-3-cols {
+            grid-template-columns: 1fr;
+            gap: 1rem;
+            row-gap: 1.3rem;
+          }
+        }
+        @media (max-width: 34em) {
+          .first-2 {
+            font-size: 1.5rem;
+            margin-bottom: 0.8rem;
+          }
+          .sec-nav {
+            font-size: 1rem;
+          }
+        }
+        @media (max-width: 37em) {
+          .forth-alpha {
+            /* font-size: 0.9rem; */
+            width: 90vw;
+          }
+        }
+        @media (max-width: 29em) {
+          .grid-2-cols,
+          .grid-3-cols {
+            grid-template-columns: 1fr;
+            row-gap: 2.3rem;
+      
+            /* row-gap: 1.3rem; */
+          }
+          .l {
+            margin-bottom: 2rem;
+          }
+        }
+      
+        /* @media (max-width: ) {
+            }
+            @media (max-width: ) {
+            }
+            @media (max-width: ) {
+            } */
+      </style>
+      
+      <div>
+        <div class="body">
+          <div class="first-max">
+            <div class="hero">
+              <div class="hero-1">
+                <div class="first-2">
+                  Developing softwares that adapt to market demand
+                </div>
+                <div class="first-3">
+                  <a href="#" class="main-nav"> Our Products > </a>
+                </div>
+              </div>
+      
+              <div class="hero-2"></div>
+            </div>
+          </div>
+      
+          <div class="sec">
+            <div class="second">
+              <h1 class="headers">
+                Integrated Software Services Ltd. (ISSL) is a software development and
+                consulting company whose core purpose is to help companies improve
+                business performance through;
+              </h1>
+      <div class="cardme">
+        <div class="grid-3-cols girl">
+            <div class="card card-1">
+              <img
+                class="d"
+                src="https://github.com/Gbolahan2003/issl/blob/main/src/images/Rectangle126.png?raw=true"
+              />
+              <div class="ca-1">Strategy</div>
+              <div class="ca-2">
+                For businesses to thrive in the digital era, it takes a formula
+                that puts organizational evolution at the forefront. We'll work
+                with you on pragmatic strategies for organizational change that
+                increase your agility, resilience and ability to compete.
+              </div>
+              <div class="ca-3">
+                <a href="#" class="sec-nav"
+                  ><a href="#" class="sec-nav"> Our Strategy process </a>
+                </a>
+              </div>
+              <ion-icon class="chev" name="chevron-forward-outline"></ion-icon>
+            </div>
+  
+            <div class="card card-2">
+              <img
+                src="https://github.com/Gbolahan2003/issl/blob/main/src/images/Rectangle127.png?raw=true
+                "
+              />
+              <div class="ca-1">Design</div>
+              <div class="ca-2">
+                Embedding customer experience into products and design is more
+                important than ever. We align product thinking with platform
+                expertise and digital execution to deliver exceptional customer
+                experiences powered by integrated technology and design.
+              </div>
+              <div class="ca-3">
+                <a href="#" class="sec-nav">
+                  Our Strategy process
+                  <ion-icon
+                    class="chev"
+                    name="chevron-forward-outline"
+                  ></ion-icon>
+                </a>
+              </div>
+            </div>
+  
+            <div class="card card-3">
+              <img
+                src="https://github.com/Gbolahan2003/issl/blob/main/src/images/Rectangle128.png?raw=true
+               "
+              />
+              <div class="ca-1">Development</div>
+              <div class="ca-2">
+                When change is constant it demands new levels of business agility.
+                We modernize your operations, platforms, development and delivery
+                practices to improve customer experience and deliver business
+                value faster.
+              </div>
+              <div class="ca-3">
+                <a href="#" class="sec-nav">
+                  Our Development Process
+                  <ion-icon
+                    class="chev"
+                    name="chevron-forward-outline"
+                  ></ion-icon>
+                </a>
+              </div>
+            </div>
+          </div>
+      </div>
+ 
+
+            </div>
+          </div>
+      
+          <div class="third">
+            <div class="third-1 grid-2-cols">
+              <div class="three-1">
+                <div class="blah">
+                  <div class="ca-1 hed">How it is all comes together</div>
+                  <p class="hi"></p>
+                  <div class="death">
+                    By developing a pragmatic strategy for your organizational change
+                    that increase your agility, resilience and ability to compete,
+                    aligned with product thinking and digital execution to deliver
+                    exceptional customer experiences powered by integrated technology
+                    and design, we modernize your operations, platforms, development
+                    and delivery practices to improve customer experience and deliver
+                    business value faster.
+                  </div>
+                  <div class="ca-3 ca">
+                    <a href="#" class="sec-nav"> What we do </a>
+                    <ion-icon class="chev" name="chevron-forward-outline"></ion-icon>
+                  </div>
+                </div>
+              </div>
+              <div class="three-2">
+                <img
+                  class="im"
+                  src="https://github.com/Gbolahan2003/issl/blob/main/src/images/Rectangle130.png?raw=true"
+                />
+              </div>
+            </div>
+          </div>
+      
+          <div class="forth">
+            <div class="forth-1">
+              <div class="ca-1">Our Solutions</div>
+              <p class="hi"></p>
+            </div>
+      
+            <div class="forth-alpha">
+              We are committed to providing flexible, low-cost solutions to our
+              customers that will help make their businesses run more smoothly and
+              profitably.
+            </div>
+      
+            <div class="forth-2">
+              <div class="forth-2-1 grid-2-cols">
+                <div class="for-1 for">
+                  <div class="fo-1">
+                    <img
+                      src="https://github.com/Gbolahan2003/issl/blob/main/src/images/Group944.png?raw=true"
+                    />
+                  </div>
+                  <div class="fo-2">Stock Broking and Financial Services</div>
+                  <div class="fo-3">
+                    iBroker is an integrated investment management, accounting,
+                    transaction handling, customer service and management reporting
+                    system
+                  </div>
+                </div>
+      
+                <div class="for-2 for">
+                  <div class="fo-1">
+                    <img
+                      src="https://github.com/Gbolahan2003/issl/blob/main/src/images/Group940.png?raw=true"
+                    />
+                  </div>
+                  <div class="fo-2">Strong Authentication</div>
+                  <div class="fo-3">
+                    Our strong authentication solutions are designed to protect your
+                    business, employees and customers across a range of different
+                    industries.
+                  </div>
+                </div>
+              </div>
+            </div>
+      
+            <div class="forth-3">
+              <div class="grid-3-cols">
+                <div class="fo-4">
+                  <div class="fo--1">
+                    <img
+                      class="f"
+                      src="https://github.com/Gbolahan2003/issl/blob/main/src/images/Group943.png?raw=true"
+                    />
+                  </div>
+                  <div class="fo-2">Banking</div>
+                  <div class="fo--1">
+                    To retain current clients and attract new customers, you need to
+                    offer your clients the best, simplified and affordable solutions
+                    to bank online.
+                  </div>
+                </div>
+                <div class="fo-4">
+                  <div class="fo--1">
+                    <img
+                      class="f"
+                      src="https://github.com/Gbolahan2003/issl/blob/main/src/images/Group942.png?raw=true"
+                    />
+                  </div>
+                  <div class="fo-2">Biometris</div>
+                  <div class="fo--1">
+                    integrate a low-cost biometric verification system into your
+                    technology platform that will help you improve your security and
+                    boost your profitability.
+                  </div>
+                </div>
+                <div class="fo-4">
+                  <div class="fo--1">
+                    <img
+                      class="f"
+                      src="https://github.com/Gbolahan2003/issl/blob/main/src/images/Group942.png?raw=true"
+                    />
+                  </div>
+                  <div class="fo-2">CMR Solutions</div>
+                  <div class="fo--1">
+                    We deploy the award winning genesisworld CRM from our CRM partner,
+                    CAS-CRM, to provide flexible solutions suitable to your needs.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+      
+          <div class="fifth">
+            <div class="fifth-1">
+              <div class="ca-1">Explore our Products</div>
+              <p class="hi l"></p>
+      
+              <!-- <div class="fifth-2 grid-3-cols">
+      
+      
+                  <div class="fyi">
+                    <div class="y-1">
+                      <img
+                        class="y"
+                        src="https://github.com/Gbolahan2003/issl/blob/main/src/images/Rectangle132.png?raw=true"
+                      />
+                    </div>
+                    <div class="y-2">
+                      <div class="cat">
+                        Do more than banking with our IntegraBanking Application
+                      </div>
+                      <div>
+                        Explore product
+                        
+                 <ion-icon class="chev" name="chevron-forward-outline"></ion-icon>      </div>
+                    </div>
+                  </div>
+                  <div class="fyi">
+                    <div class="y-1">
+                      <img
+                        class="y"
+                        src="https://github.com/Gbolahan2003/issl/blob/main/src/images/Rectangle132.png?raw=true"
+                      />
+                    </div>
+                    <div class="y-2">
+                      <div class="3at">
+                        Digital onboarding processes for SME and Corporate clients
+                      </div>
+                      <div>
+                        Explore product
+                        
+                 <ion-icon class="chev" name="chevron-forward-outline"></ion-icon>      </div>
+                    </div>
+                  </div>
+                  <div class="fyi">
+                    <div class="y-1">
+                      <img
+                        class="y"
+                        src="https://github.com/Gbolahan2003/issl/blob/main/src/images/Rectangle132.png?raw=true"
+                      />
+                    </div>
+                    <div class="y-2">
+                      <div class="cat">
+                        Online banking transaction with mobile banking application
+                      </div>
+                      <div>
+                        Explore product
+                        
+                 <ion-icon class="chev" name="chevron-forward-outline"></ion-icon>      </div>
+                    </div>
+                  </div>
+                </div> -->
+            </div>
+            <!-- //////////////////////////////////////////// -->
+            <div class="i grid-3-cols">
+              <div class="am">
+                <div class="am-1">
+                  <img
+                    src="https://github.com/Gbolahan2003/issl/blob/main/src/images/Rectangle132.png?raw=true"
+                  />
+                </div>
+                <div class="am-2">
+                  <p class="m-3">
+                    Digital onboarding processes for SME and Corporate clients
+                  </p>
+                  <p class="m-2">
+                    <a href="#" class="sec-nav">
+                      Our Strategy process
+                      <ion-icon
+                        class="chev"
+                        name="chevron-forward-outline"
+                      ></ion-icon>
+                    </a>
+                  </p>
+                </div>
+              </div>
+              <div class="am">
+                <div class="am-1">
+                  <img
+                    src="https://github.com/Gbolahan2003/issl/blob/main/src/images/Rectangle132.png?raw=true"
+                  />
+                </div>
+                <div class="am-2">
+                  <p class="m-3">
+                    Digital onboarding processes for SME and Corporate clients
+                  </p>
+                  <p class="m-2">
+                    <a href="#" class="sec-nav">
+                      Explore our Products
+                      <ion-icon
+                        class="chev"
+                        name="chevron-forward-outline"
+                      ></ion-icon>
+                    </a>
+                  </p>
+                </div>
+              </div>
+              <div class="am">
+                <div class="am-1">
+                  <img
+                    src="https://github.com/Gbolahan2003/issl/blob/main/src/images/Rectangle132.png?raw=true"
+                  />
+                </div>
+      
+                <style>
+                  .mango {
+                    margin-bottom: 2px;
+                    color: blue;
+                    margin-left: 5px;
+                  }
+                </style>
+                <div class="am-2">
+                  <p class="m-3">
+                    Digital onboarding processes for SME and Corporate clients
+                  </p>
+                  <p class="m-2">
+                    <a href="#" class="sec-nav">
+                      Our Strategy process
+                      <span class="mango">></span>
+                    </a>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+
+
+
+
+    <div class="connectwithus">
+<div class="connectdiv">
+    <div class="connecttext">Connect with ISSL</div>
+    <div class="connectbtn">
+        <input type="button" value="Contact Us" class="contactbtn button1">
+    </div>
+</div>
+    </div>
+
+
+    <script>
+        const navToggler = document.querySelector(".nav-toggler");
+    navToggler.addEventListener("click", navToggle);
     
+    function navToggle() {
+       navToggler.classList.toggle("active");
+       const nav = document.querySelector(".nav");
+       nav.classList.toggle("open");
+       if(nav.classList.contains("open")){
+           nav.style.maxHeight = nav.scrollHeight + "px";
+       }
+       else{
+           nav.removeAttribute("style");
+       }
+    } 
+    </script>
+    
+    <script>
+        window.addEventListener('scroll',(e)=>{
+          const nav = document.querySelector('.header');
+          if(window.pageYOffset>0){
+            nav.classList.add("add-shadow");
+          }else{
+            nav.classList.remove("add-shadow");
+          }
+        });
+      </script>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
+        <script>
+            $("document").ready(function(){
+  $(".tab-slider--body").hide();
+  $(".tab-slider--body:first").show();
+});
 
-<div class="isslcontainers">
-    <div class="isslherosection">
-        <div class="herosectionflexcontainer">
-            <div class="herotextsection">
-                <div class="herotextheader">
-                    Consulting Services
-                </div>
-                <div class="herobodytext">
-                    ISSL combines business savvy and technology expertise to craft tailor made solutions made to your specific reality.
-                </div>
-            </div>
-            <div class="heroimagesection">
-                <img src="20943705 1.svg" alt="">
-            </div>
-        </div>
-    </div>
-
-    <div class="isslservicessection">
-        <div class="servicessectionheader">
-          <p>
-            Services
-          </p>  
-        </div>
-
-        <div class="isslservicesgridcards">
-            <div class="cardme">
-<div class="isslcardlogo">
-<img src="Group 973.svg" alt="">
-</div>
-<div class="isslcardtitle">In-depth understanding of business process and technology.</div>
-<div class="isslcardcontent">With an in-depth understanding of business 
-    process and technology along with hands-on 
-    experience gained through working on critical 
-    issues in key industries of the IT marketplace;</div>
-<div class="isslcardsmalltext">
-  <p>
-    ISSL is uniquely positioned to providing 
-    you with top-end consulting services 
-    and solutions to meet your business 
-    challenges.
-  </p> 
-</div>
-            </div>
-            <div class="cardme">
-                <div class="isslcardlogo">
-                    <img src="akar-icons_info-fill.svg" alt="">
-                    </div>
-                    <div class="isslcardtitle">Experience Information Technology Consultants.</div>
-                    <div class="isslcardcontent">We are flexible to meet the diversity of your special requirements thus offering the services of our pre-qualified, experienced Information Technology consultants on both short-term and long-term assignments, from technical consulting helping your IT department in evaluating your current implementation and recommending enhancements, to evaluation and needs assessment.</div>
-                    <div class="isslcardsmalltext">
-                      <p>
-                        We select the appropriate technology and tools, project 
-                        management solution, and development of the complete 
-                        end-to-end web application or software product.
-                      </p> 
-                    </div>
-            </div>
-            <div class="cardme">
-                <div class="isslcardlogo">
-                    <img src="arcticons_studysmarter.svg" alt="">
-                    </div>
-                    <div class="isslcardtitle">Feasibility study and assist you with technical advice.</div>
-                    <div class="isslcardcontent">If you have some idea in mind or you are thinking of applying IT technology in a unique and interesting way and you are not sure whether the concept is feasible, our consultants can hold a feasibility study and assist you with technical advice, investigation and assessment resulting in a feasibility report.</div>
-                    <div class="isslcardsmalltext">
-                     
-                        We provide you with a clear vision of how this solution 
-can be used to meet your business objectives or gain 
-a distinct advantage over competitors..
-                     
-                    </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<script>
-    const navToggler = document.querySelector(".nav-toggler");
-navToggler.addEventListener("click", navToggle);
-
-function navToggle() {
-   navToggler.classList.toggle("active");
-   const nav = document.querySelector(".nav");
-   nav.classList.toggle("open");
-   if(nav.classList.contains("open")){
-       nav.style.maxHeight = nav.scrollHeight + "px";
-   }
-   else{
-       nav.removeAttribute("style");
-   }
-} 
-</script>
-
-<script>
-    window.addEventListener('scroll',(e)=>{
-      const nav = document.querySelector('.header');
-      if(window.pageYOffset>0){
-        nav.classList.add("add-shadow");
-      }else{
-        nav.classList.remove("add-shadow");
-      }
-    });
-  </script>
-
-
-    </body>
+$(".tab-slider--nav li").click(function() {
+  $(".tab-slider--body").hide();
+  var activeTab = $(this).attr("rel");
+  $("#"+activeTab).fadeIn();
+	if($(this).attr("rel") == "tab2"){
+		$('.tab-slider--tabs').addClass('slide');
+	}	
+    if($(this).attr("rel") == "tab3"){
+		$('.tab-slider--tabs').addClass('slide');
+	}
+    if($(this).attr("rel") == "tab4"){
+		$('.tab-slider--tabs').addClass('slide');
+	}
+    if($(this).attr("rel") == "tab5"){
+		$('.tab-slider--tabs').addClass('slide');
+	}
+    else{
+		$('.tab-slider--tabs').removeClass('slide');
+	}
+  $(".tab-slider--nav li").removeClass("active");
+  $(this).addClass("active");
+});
+        </script>
+</body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -23,6 +23,19 @@ color: rgba(34, 34, 34, 1);
     width: 90%;
     margin: auto;
     padding: 3px;
+
+}
+
+.pb20{
+    margin-top: 80px;
+    display: flex;
+    flex-direction: column;
+    gap: 90px;
+    margin-bottom: 90px;
+}
+
+.rvs{
+    flex-direction: row-reverse;
 }
 .isslsolutionflex{
     width: 100%;
@@ -34,6 +47,10 @@ color: rgba(34, 34, 34, 1);
     background: url(Rectangle\ 125\ \(1\).png);
     background-repeat: no-repeat;
     background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    /* background-blend-mode: darken; */
 }
 .isslsolutiontext{
     width: 100%;
@@ -52,6 +69,58 @@ color: rgba(34, 34, 34, 1);
     display: flex;
 }
 
+.twosideintdiv{
+    width: 100%;
+    display: flex;
+    gap: 30px;
+
+}
+
+.splitsideheaders{
+    font-family: Poppins;
+font-size: 30px;
+font-weight: 400;
+line-height: 48px;
+letter-spacing: 0em;
+text-align: left;
+color: rgb(48, 48, 48);
+
+}
+
+.sideoftexting{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+}
+
+.sideofimage{
+    width: 100%;
+    height: auto;
+    display: contents;
+}
+
+
+.splitsidebodys{
+    font-family: Poppins;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: rgba(34, 34, 34, 1);
+}
+
+
+.sideofimage img{
+    width: fit-content;
+    height: 100%;
+    object-fit: cover;
+}
+
+.sideoftexting{
+    width: 100%;
+}
 
 .isslsolutionheader{
     font-family: Poppins;
@@ -527,6 +596,62 @@ color: rgba(89, 89, 89, 1);
     .bankingsolutiondiv{
         flex-direction: column;
     }
+
+    .twosideintdiv{
+        flex-direction: column;
+    }
+
+    .connecttext {
+        font-family: Poppins;
+        font-size: 20px;
+        font-weight: 300;
+        line-height: normal;
+        letter-spacing: 0em;
+        text-align: left;
+        color: rgba(255, 255, 255, 1);
+    }
+
+    .connectdiv {
+        display: flex;
+        width: 80%;
+        margin: auto;
+        justify-content: space-between;
+        padding: 11px;
+    }
+
+    .connectwithus {
+        height: 100%;
+        padding-block: 20px;
+        width: 100%;
+        background: rgba(58, 58, 133, 1);
+        background-image: none;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    .pb20{
+        margin-top: 80px;
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+        margin-bottom: 90px;
+    }
+
+    .sideoftexting{
+        margin-bottom: 50px;
+    }
+
+  
+
+    .sideofimage{
+        width: 100%;
+     
+    }
+
+    .sideofimage img{
+        width: 100%;
+    }
+
     .tab-slider--container{
         width: 100%;
       }
@@ -537,12 +662,17 @@ color: rgba(89, 89, 89, 1);
         justify-content: center;
         align-items: center;
     }
+    .bankingsolimg img{
+        width: 100%;
+        object-fit: contain;
+        height: 100%;
+    }
 
     .isslsolutionflex{
         flex-direction: column;
     }
-    .isslsolutiontext{
-        width: 100%;
+    .isslsolutiontext {
+        width: 90%;
     }
 
     .isslsolutionimage{
@@ -564,7 +694,7 @@ flex-direction: column;
 
     .isslsolutionbody{
 
-        text-align: center;
+        text-align: start;
     }
 
     .isslsolutiontext{
