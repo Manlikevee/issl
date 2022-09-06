@@ -1,0 +1,1004 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/leone.css" />
+    <link rel="stylesheet" href="solutions.css">
+    <title>What we do</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+      :root {
+        --color-1: rgba(255, 255, 255, 1);
+      }
+
+      ul {
+        list-style: none;
+      }
+
+      a {
+        text-decoration: none;
+      }
+
+      .container {
+        max-width: 1170px;
+        margin: auto;
+      }
+
+      .row {
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      .align-items-center {
+        align-items: center;
+      }
+
+      .justify-content-between {
+        justify-content: space-between;
+      }
+
+      /*header*/
+      .header {
+        overflow: hidden;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background-color: var(--color-1);
+        padding: 0;
+        line-height: 1.5;
+        z-index: 20000;
+      }
+
+      .add-shadow {
+        box-shadow: -1px 8px 5px -5px rgba(0, 0, 0, 0.44);
+        -webkit-box-shadow: -1px 8px 5px -5px rgba(0, 0, 0, 0.44);
+        -moz-box-shadow: -1px 8px 5px -5px rgba(0, 0, 0, 0.44);
+      }
+
+      .header .logo,
+      .header .nav {
+        padding: 0 15px;
+      }
+      .header .logo a {
+        font-size: 10px;
+        color: rgba(34, 34, 34, 1);
+
+        text-transform: capitalize;
+      }
+
+      .logo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .header .nav ul li {
+        display: inline-block;
+        margin-left: 40px;
+      }
+      .header .nav ul li a {
+        display: block;
+        font-size: 16px;
+        text-transform: capitalize;
+        color: rgba(34, 34, 34, 1);
+        padding: 10px 0;
+        transition: all 0.5s ease;
+      }
+      .header .nav ul li a.active,
+      .header .nav ul li a:hover {
+        color: rgba(235, 50, 56, 1);
+      }
+      .nav-toggler {
+        height: 34px;
+        width: 44px;
+        background-color: #999;
+        border-radius: 4px;
+        cursor: pointer;
+        border: none;
+        display: none;
+        margin-right: 15px;
+      }
+      .nav-toggler:focus {
+        outline: none;
+        box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+      }
+      .nav-toggler span {
+        height: 2px;
+        width: 20px;
+        background-color: var(--color-1);
+        display: block;
+        margin: auto;
+        position: relative;
+        transition: all 0.3s ease;
+      }
+      .nav-toggler.active span {
+        background-color: transparent;
+      }
+      .nav-toggler span::before,
+      .nav-toggler span::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: var(--color-1);
+        transition: all 0.3s ease;
+      }
+      .nav-toggler span::before {
+        transform: translateY(-6px);
+      }
+      .nav-toggler.active span::before {
+        transform: rotate(45deg);
+      }
+      .nav-toggler span::after {
+        transform: translateY(6px);
+      }
+      .nav-toggler.active span::after {
+        transform: rotate(135deg);
+      }
+      @media (max-width: 991px) {
+        .nav-toggler {
+          display: block;
+        }
+        .header .nav {
+          width: 100%;
+          padding: 0;
+          max-height: 0px;
+          overflow: hidden;
+          visibility: hidden;
+          transition: all 0.5s ease;
+        }
+        .header .nav.open {
+          visibility: visible;
+        }
+        .header .nav ul {
+          padding: 12px 15px 0;
+          margin-top: 12px;
+          border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .header .nav ul li {
+          display: block;
+          margin: 0;
+        }
+      }
+
+      /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other (and change the direction - make the "cart" column go on top) */
+      @media (max-width: 800px) {
+        .row1 {
+          flex-direction: column-reverse;
+        }
+        .col-25 {
+          margin-bottom: 20px;
+        }
+      }
+
+      /* Add a background color and some padding around the form */
+      .container2 {
+        margin-top: 30px;
+        border-radius: 5px;
+        background-color: #fff;
+        padding: 20px;
+        width: 80%;
+        margin: 0 auto;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+      }
+
+      .isslcontainers {
+        width: 90%;
+        margin: auto;
+        padding: 3px;
+      }
+
+      .isslherosection {
+        min-height: 100vh;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .herosectionflexcontainer {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+      }
+
+      .herotextsection {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+        height: 100%;
+      }
+
+      .herotextheader {
+        font-family: Poppins;
+        font-size: 23px;
+        font-weight: 600;
+        line-height: 60px;
+        letter-spacing: 0em;
+        text-align: start;
+        color: rgba(58, 58, 133, 1);
+      }
+
+      .herobodytext {
+        font-family: Poppins;
+        font-size: 21px;
+        font-weight: 300;
+        line-height: 38px;
+        letter-spacing: 0em;
+        text-align: left;
+        color: rgba(69, 69, 69, 1);
+      }
+
+      .heroimagesection {
+        width: 100%;
+        height: 100%;
+      }
+
+      .heroimagesection img {
+        width: 90%;
+        height: 100%;
+        object-fit: contain;
+      }
+
+      .servicessectionheader p {
+        font-family: Poppins;
+        font-size: 26px;
+        font-weight: 600;
+        line-height: 54px;
+        letter-spacing: 0em;
+        text-align: start;
+        color: rgba(58, 58, 133, 1);
+      }
+
+      .isslservicesgridcards {
+        display: grid;
+        grid-auto-rows: 1fr;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        grid-gap: 40px;
+      }
+
+      .cardme {
+        background: rgba(250, 250, 250, 1);
+        height: 1fr;
+        border-radius: 10px;
+        padding: 25px;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      .isslcardtitle {
+        font-family: Poppins;
+        font-size: 19px;
+        font-weight: 600;
+        line-height: 30px;
+        letter-spacing: 0em;
+        text-align: left;
+        color: rgba(46, 53, 58, 1);
+      }
+
+      .isslcardcontent {
+        font-family: Poppins;
+        font-size: 15px;
+        font-weight: 300;
+        line-height: 21px;
+        letter-spacing: 0em;
+        text-align: justified;
+        color: rgba(141, 143, 144, 1);
+      }
+
+      .isslcardsmalltext {
+        font-family: Poppins;
+        font-size: 14px;
+        font-weight: 275;
+        line-height: 20px;
+        letter-spacing: 0.03em;
+        text-align: justified;
+        color: rgba(141, 143, 144, 1);
+      }
+
+      @media only screen and (max-width: 800px) {
+        .herosectionflexcontainer {
+          flex-direction: column-reverse;
+          margin-bottom: 30px;
+        }
+
+        .herotextheader {
+          font-family: Poppins;
+          font-size: 17px;
+        }
+
+        .herobodytext {
+          font-family: Poppins;
+          font-size: 15px;
+          line-height: 28px;
+        }
+
+        .isslservicesgridcards {
+          display: grid;
+          grid-auto-rows: auto;
+          grid-gap: 20px;
+        }
+
+        .cardme {
+          background: rgba(250, 250, 250, 1);
+          border-radius: 10px;
+          padding: 15px;
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+        }
+
+        .isslcardtitle {
+          font-family: Poppins;
+          font-size: 15px;
+          font-weight: 600;
+          line-height: 20px;
+          letter-spacing: 0em;
+          text-align: left;
+          color: rgba(46, 53, 58, 1);
+        }
+
+        .isslcardcontent {
+          font-family: Poppins;
+          font-size: 14px;
+          font-weight: 300;
+          line-height: 26px;
+          letter-spacing: 0em;
+          text-align: justified;
+          color: rgba(141, 143, 144, 1);
+        }
+
+        .isslcardsmalltext {
+          font-family: Poppins;
+          font-size: 13px;
+          font-weight: 275;
+          line-height: 26px;
+          letter-spacing: 0.03em;
+          text-align: justified;
+          color: rgba(141, 143, 144, 1);
+        }
+      }
+
+      .first {
+        width: 98vw;
+        /* height: 50vh; */
+        position: relative;
+        /* background-color: blue; */
+        display: flex;
+        flex-direction: column;
+        /* align-items: center; */
+        /* justify-content: center; */
+        /* padding-right: 5rem; */
+      }
+      body {
+        padding: 0;
+        margin: 0;
+        font-family: "Poppins", sans-serif;
+      }
+      .body {
+        background-color: #ffff;
+        margin-left: 1rem;
+        margin-right: 1rem;
+        padding: 0;
+      }
+      .first-max {
+        background-image: url("https://github.com/Gbolahan2003/isslcomp/blob/main/Rectangle20.png?raw=true");
+        height: 90vh;
+        display: flex;
+        /* justify-content: center; */
+        align-items: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        width: 100%;
+        /* justify-content: center; */
+      }
+      .hero {
+        display: flex;
+      }
+      .hero-1 {
+        padding-left: 2rem;
+        width: 70vw;
+      }
+
+      .first-2 {
+        color: #fff;
+        font-size: 3.5rem;
+        font-weight: 700;
+        margin-bottom: 2rem;
+      }
+      .main-nav {
+        color: #fff;
+        font-size: 2rem;
+        text-decoration: none;
+        display: inline-block;
+        transition: all 0.8s;
+      }
+      .main-nav {
+      }
+      .main-nav:hover,
+      .main-nav:active {
+        transform: scale(1.1);
+        color: rgb(182, 172, 190);
+      }
+
+      .s {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        margin-top: 5rem;
+        margin-bottom: 5rem;
+      }
+      .s-1 {
+        width: 60vw;
+        font-size: 1.1rem;
+      }
+      .second {
+        padding: 1rem;
+      }
+      .im {
+        width: 100%;
+      }
+      .second-1 {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        width: 90%;
+        /* justify-content: center; */
+      }
+      .pic-1 {
+        font-weight: 500;
+        font-size: 1.1rem;
+      }
+      .pic-2 {
+        font-size: 0.9rem;
+        line-height: 1.7;
+      }
+      .grid-3-cols {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 1rem;
+        row-gap: 3rem;
+      }
+
+      .pic-3 a {
+        text-decoration: none;
+        color: black;
+      }
+      l {
+        color: red;
+      }
+      .pic-3 {
+        margin-top: auto;
+      }
+      .third {
+        background-color: #4d4d98;
+        /* padding-top: 2;
+  padding-bottom: 2rem; */
+      }
+
+      .five {
+        display: flex;
+        flex-direction: column;
+        background-color: white;
+        width: 50vw;
+        padding: 1rem;
+        gap: 0.8rem;
+        margin-bottom: 1rem;
+      }
+
+      .third-1 {
+        display: flex;
+        gap: 5rem;
+        align-items: center;
+        justify-content: center;
+      }
+      .fi-1 {
+        font-size: 0.9rem;
+      }
+
+      .fi-2 {
+        font-size: 0.8rem;
+        font-weight: 700;
+      }
+      .fi-3 {
+        font-size: 0.9rem;
+        font-weight: 300;
+        color: #a0a0a0;
+      }
+      .three {
+        display: fixed;
+        color: #fff;
+        font-size: 1.6rem;
+        margin-left: 2rem;
+        font-weight: 600;
+      }
+      .third-1 {
+        height: 25rem;
+        /* margin-bottom: 10rem; */
+        overflow: scroll;
+      }
+
+      .five-0 {
+        margin-right: 4rem;
+      }
+      .third {
+        margin-top: 3rem;
+        margin-bottom: 10rem;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+      }
+      .none {
+        display: none;
+        color: #fff;
+        font-size: 1.1rem;
+        font-weight: 600;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+        width: 60vw;
+        margin-left: 2rem;
+      }
+
+      @media (max-width: 950px) {
+        .grid-3-cols {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+      @media (max-width: 940px) {
+        .first-2 {
+          font-size: 3rem;
+        }
+      }
+      @media (max-width: 798px) {
+        .first-2 {
+          font-size: 2rem;
+        }
+        .main-nav {
+          font-size: 1.2rem;
+        }
+      }
+      @media (max-width: 775px) {
+        .three {
+          margin-left: 0.8rem;
+        }
+        .third-1 {
+          display: flex;
+          flex-direction: column;
+        }
+        .none {
+          display: flex;
+        }
+      }
+      @media (max-width: 600px) {
+        .grid-3-cols {
+          display: grid;
+          grid-template-columns: 1fr;
+        }
+      }
+      @media (max-width: 500px) {
+        .first-2 {
+          font-size: 1.2rem;
+        }
+        .main-nav {
+          font-size: 1rem;
+        }
+        .s-1 {
+          width: 100vw;
+        }
+        .first-max {
+          height: 90vh;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+        <div class="container">
+            <div class="row align-items-center justify-content-between">
+                <div class="logo">
+                   <a href="index.html">
+                
+                    <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <rect width="60" height="60" fill="url(#pattern0)"/>
+                        <defs>
+                        <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
+                        <use xlink:href="#image0_1964_1593" transform="scale(0.00444444)"/>
+                        </pattern>
+                        <image id="image0_1964_1593" width="225" height="225" xlink:href="data:image/png;base64,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"/>
+                        </defs>
+                        </svg>
+                        
+                   </a>
+                </div>
+                <button type="button" class="nav-toggler">
+                   <span></span>
+                </button>
+                <nav class="nav">
+                   <ul>
+                      <li><a href="#" >About</a></li>
+                      <li><a href="whatwedo.html" >What we do</a></li>
+                      <li><a href="digitalproduct.html">Solutions</a></li>
+                      <li><a href="#">Technologies</a></li>
+                      <li><a href="digitalproduct copy.html" >Products</a></li>
+                      <li><a href="#">Cloud Services</a></li>
+                      <li><a href="#">Careers</a></li>
+                   </ul>
+                </nav>
+            </div>
+        </div>
+     </header>
+    <!-- /////////////////////////////////////////////////////// -->
+    <div class="first-max">
+      <div class="hero">
+        <div class="hero-1">
+          <div class="first-2">
+            IT services you need to modernize operations
+          </div>
+          <div class="first-3">
+            <a href="#" class="main-nav"> Our Products > </a>
+          </div>
+        </div>
+
+        <div class="hero-2"></div>
+      </div>
+    </div>
+    <!-- //////////////////////////////// -->
+
+    <div class="body">
+      <div class="s">
+        <div class="s-1">
+          We are committed to providing flexible, low-cost solutions to our
+          customers that will help make their businesses run more smoothly and
+          profitably.
+        </div>
+      </div>
+      <!-- //////////////////////////////// -->
+
+      <div class="second grid-3-cols">
+        <!--  -->
+        <div class="second-1">
+          <div class="pic">
+            <img
+              class="im"
+              src="https://github.com/Gbolahan2003/isslcomp/blob/main/Rectangle21.png?raw=true"
+              alt=""
+            />
+          </div>
+          <div class="pic-1">Consulting</div>
+          <div class="pic-2">
+            Experts analyze the existing problems and needs in order to define a
+            clear set of goals to be reached with CRM implementation. With the
+            involvement of your management team our consultants define your “as
+            is” process and create the final “to be” scheme.
+          </div>
+          <div class="pic-3">
+            <a href="#">Explore <l>></l></a>
+          </div>
+        </div>
+        <!--  -->
+        <!--  -->
+        <div class="second-1">
+          <div class="pic">
+            <img
+              class="im"
+              src="https://github.com/Gbolahan2003/isslcomp/blob/main/Rectangle22.png?raw=true"
+              alt=""
+            />
+          </div>
+          <div class="pic-1">Project Planning</div>
+          <div class="pic-2">
+            We calculate the budget and development time frames. For larger
+            projects with heavy customization and/or integration requirements,
+            it may be necessary to deliver the solution in several iterations,
+            in order to minimize the time before the most critical changes are
+            made.
+          </div>
+          <div class="pic-3">
+            <a href="#">Explore <l>></l></a>
+          </div>
+        </div>
+        <!--  -->
+
+        <!--  -->
+        <div class="second-1">
+          <div class="pic">
+            <img
+              class="im"
+              src="https://github.com/Gbolahan2003/isslcomp/blob/main/Rectangle23.png?raw=true"
+              alt=""
+            />
+          </div>
+          <div class="pic-1">Tranning</div>
+          <div class="pic-2">
+            Trainings on using the new system are organized for your staff
+            members so they feel comfortable with utilizing its vast
+            functionality once the system is installed.
+          </div>
+          <div class="pic-3">
+            <a href="#">Explore <l>></l></a>
+          </div>
+        </div>
+        <!--  -->
+
+        <!--  -->
+        <div class="second-1">
+          <div class="pic">
+            <img
+              class="im"
+              src="https://github.com/Gbolahan2003/isslcomp/blob/main/Rectangle24.png?raw=true"
+              alt=""
+            />
+          </div>
+          <div class="pic-1">Prototype Creation</div>
+          <div class="pic-2">
+            To enhance your understanding of the future system’s capabilities,
+            our consultants use your requirements to prepare a live demo
+            (working prototype) of the key elements of your targeted “to be”
+            process. This lets your team see and review the look of the end
+            result.
+          </div>
+          <div class="pic-3">
+            <a href="#">Explore <l>></l></a>
+          </div>
+        </div>
+        <!--  -->
+
+        <!--  -->
+        <div class="second-1">
+          <div class="pic">
+            <img
+              class="im"
+              src="https://github.com/Gbolahan2003/isslcomp/blob/main/Rectangle25.png?raw=true"
+              alt=""
+            />
+          </div>
+          <div class="pic-1">Design</div>
+          <div class="pic-2">
+            Trainings on using the new system are organized for your staff
+            members so they feel comfortable with utilizing its vast
+            functionality once the system is installedExperts analyze the
+            existing problems and needs in order to define a clear set of goals
+            to be reached with CRM implementation. With the involvement of your
+            management team our consultants define your “as is” process and
+            create the final “to be” scheme.
+          </div>
+          <div class="pic-3">
+            <a href="#">Explore <l>></l></a>
+          </div>
+        </div>
+        <!--  -->
+
+        <!--  -->
+        <div class="second-1">
+          <div class="pic">
+            <img
+              class="im"
+              src="https://github.com/Gbolahan2003/isslcomp/blob/main/Rectangle26.png?raw=true"
+              alt=""
+            />
+          </div>
+          <div class="pic-1">Development</div>
+          <div class="pic-2">
+            We calculate the budget and development time frames. For larger
+            projects with heavy customization and/or integration requirements,
+            it may be necessary to deliver the solution in several iterations,
+            in order to minimize the time before the most critical changes are
+            made.
+          </div>
+          <div class="pic-3">
+            <a href="#">Explore <l>></l></a>
+          </div>
+        </div>
+        <!--  -->
+
+        <!--  -->
+        <div class="second-1">
+          <div class="pic">
+            <img
+              class="im"
+              src="https://github.com/Gbolahan2003/isslcomp/blob/main/Rectangle27.png?raw=true"
+              alt=""
+            />
+          </div>
+          <div class="pic-1">Party integration</div>
+          <div class="pic-2">
+            While CAS genesisWorld is a good tool on its own, you may gain even
+            more from its integration with existing ECM, ERP or Portal products.
+            CAS genesisWorld comes with out of box integration components common
+            ERP suites such as SAGE, Navision, SAP and Oracle.
+          </div>
+          <div class="pic-3">
+            <a href="#">Explore <l>></l></a>
+          </div>
+        </div>
+        <!--  -->
+
+        <!--  -->
+        <div class="second-1">
+          <div class="pic">
+            <img
+              class="im"
+              src="https://github.com/Gbolahan2003/isslcomp/blob/main/Rectangle28.png?raw=true"
+              alt=""
+            />
+          </div>
+          <div class="pic-1">Cloud</div>
+          <div class="pic-2">
+            Make the right technology investments at the right time and on the
+            right platforms to drive innovation, increase customer loyalty and
+            grow your business.
+          </div>
+          <div class="pic-3">
+            <a href="#">Explore <l>></l></a>
+          </div>
+        </div>
+        <!--  -->
+
+        <!--  -->
+        <div class="second-1">
+          <div class="pic">
+            <img
+              class="im"
+              src="https://github.com/Gbolahan2003/isslcomp/blob/main/Rectangle29.png?raw=true"
+              alt=""
+            />
+          </div>
+          <div class="pic-1">Support</div>
+          <div class="pic-2">
+            Post implementation – ISSL will hold your hands until you are
+            comfortable and your new processes are well entrenched in the
+            business DNA. Plus, our staff remains available to address any
+            issues that may arise
+          </div>
+          <div class="pic-3">
+            <a href="#">Explore <l>></l></a>
+          </div>
+        </div>
+        <!--  -->
+      </div>
+      <!-- ///////////////////////////////// -->
+      <div class="third">
+        <div class="none">What Our Customers are saying about us</div>
+        <div class="third-1">
+          <div class="three">What Our Customers are saying about us</div>
+          <div class="five-0">
+            <div class="five">
+              <div class="fi-1">
+                I was reluctant to call because I didn’t believe they would
+                really be of help but they surprised me and changed my mind.
+              </div>
+              <div class="fi-2">Babajide</div>
+              <div class="fi-3">Island Microfinance Bank</div>
+            </div>
+            <!-- /// -->
+            <div class="five">
+              <div class="fi-1">
+                I was reluctant to call because I didn’t believe they would
+                really be of help but they surprised me and changed my mind.
+              </div>
+              <div class="fi-2">Babajide</div>
+              <div class="fi-3">Island Microfinance Bank</div>
+            </div>
+            <!-- /// -->
+            <div class="five">
+              <div class="fi-1">
+                I was reluctant to call because I didn’t believe they would
+                really be of help but they surprised me and changed my mind.
+              </div>
+              <div class="fi-2">Babajide</div>
+              <div class="fi-3">Island Microfinance Bank</div>
+            </div>
+            <!-- /// -->
+            <div class="five">
+              <div class="fi-1">
+                I was reluctant to call because I didn’t believe they would
+                really be of help but they surprised me and changed my mind.
+              </div>
+              <div class="fi-2">Babajide</div>
+              <div class="fi-3">Island Microfinance Bank</div>
+            </div>
+            <!-- /// -->
+            <div class="five">
+              <div class="fi-1">
+                I was reluctant to call because I didn’t believe they would
+                really be of help but they surprised me and changed my mind.
+              </div>
+              <div class="fi-2">Babajide</div>
+              <div class="fi-3">Island Microfinance Bank</div>
+            </div>
+            <!-- /// -->
+            <div class="five">
+              <div class="fi-1">
+                I was reluctant to call because I didn’t believe they would
+                really be of help but they surprised me and changed my mind.
+              </div>
+              <div class="fi-2">Babajide</div>
+              <div class="fi-3">Island Microfinance Bank</div>
+            </div>
+            <!-- /// -->
+            <div class="five">
+              <div class="fi-1">
+                I was reluctant to call because I didn’t believe they would
+                really be of help but they surprised me and changed my mind.
+              </div>
+              <div class="fi-2">Babajide</div>
+              <div class="fi-3">Island Microfinance Bank</div>
+            </div>
+            <!-- /// -->
+            <div class="five">
+              <div class="fi-1">
+                I was reluctant to call because I didn’t believe they would
+                really be of help but they surprised me and changed my mind.
+              </div>
+              <div class="fi-2">Babajide</div>
+              <div class="fi-3">Island Microfinance Bank</div>
+            </div>
+            <!-- /// -->
+            <div class="five">
+              <div class="fi-1">
+                I was reluctant to call because I didn’t believe they would
+                really be of help but they surprised me and changed my mind.
+              </div>
+              <div class="fi-2">Babajide</div>
+              <div class="fi-3">Island Microfinance Bank</div>
+            </div>
+            <!-- /// -->
+          </div>
+        </div>
+      </div>
+      <!-- ///////////////////////////////// -->
+    </div>
+
+    <div class="connectwithus">
+        <div class="connectdiv">
+            <div class="connecttext">Connect with ISSL</div>
+            <div class="connectbtn">
+                <input type="button" value="Contact Us" class="contactbtn button1">
+            </div>
+        </div>
+            </div>
+
+    <script>
+      const navToggler = document.querySelector(".nav-toggler");
+      navToggler.addEventListener("click", navToggle);
+
+      function navToggle() {
+        navToggler.classList.toggle("active");
+        const nav = document.querySelector(".nav");
+        nav.classList.toggle("open");
+        if (nav.classList.contains("open")) {
+          nav.style.maxHeight = nav.scrollHeight + "px";
+        } else {
+          nav.removeAttribute("style");
+        }
+      }
+    </script>
+
+    <script>
+      window.addEventListener("scroll", (e) => {
+        const nav = document.querySelector(".header");
+        if (window.pageYOffset > 0) {
+          nav.classList.add("add-shadow");
+        } else {
+          nav.classList.remove("add-shadow");
+        }
+      });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  </body>
+</html>
