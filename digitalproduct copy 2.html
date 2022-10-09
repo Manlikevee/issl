@@ -514,14 +514,7 @@
 
 
 
-    <div class="connectwithus">
-<div class="connectdiv">
-    <div class="connecttext">Connect with ISSL</div>
-    <div class="connectbtn">
-        <input type="button" value="Contact Us" class="contactbtn button1">
-    </div>
-</div>
-    </div>
+
 
 
     <script>
@@ -552,35 +545,7 @@
         });
       </script>
         <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
-        <script>
-            $("document").ready(function(){
-  $(".tab-slider--body").hide();
-  $(".tab-slider--body:first").show();
-});
 
-$(".tab-slider--nav li").click(function() {
-  $(".tab-slider--body").hide();
-  var activeTab = $(this).attr("rel");
-  $("#"+activeTab).fadeIn();
-	if($(this).attr("rel") == "tab2"){
-		$('.tab-slider--tabs').addClass('slide');
-	}	
-    if($(this).attr("rel") == "tab3"){
-		$('.tab-slider--tabs').addClass('slide');
-	}
-    if($(this).attr("rel") == "tab4"){
-		$('.tab-slider--tabs').addClass('slide');
-	}
-    if($(this).attr("rel") == "tab5"){
-		$('.tab-slider--tabs').addClass('slide');
-	}
-    else{
-		$('.tab-slider--tabs').removeClass('slide');
-	}
-  $(".tab-slider--nav li").removeClass("active");
-  $(this).addClass("active");
-});
-        </script>
 </body>
 </html>
 

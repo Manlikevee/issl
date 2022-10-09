@@ -39,7 +39,7 @@ color: rgba(34, 34, 34, 1);
 }
 .isslsolutionflex{
     width: 100%;
-    min-height: 100vh;
+    min-height: 70vh;
     display: flex;
     gap: 15px;
     justify-content: center;
@@ -49,7 +49,7 @@ color: rgba(34, 34, 34, 1);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center;
+    background-position: bottom;
     /* background-blend-mode: darken; */
 }
 
@@ -88,7 +88,7 @@ color: rgba(34, 34, 34, 1);
 }
 
 .isslsolutionimage{
-    width: 80%;
+    width: auto !important;
     height: 100%;
     display: flex;
 }
@@ -158,7 +158,7 @@ color: rgb(48, 48, 48);
 
 .isslsolutionheader{
     font-family: Poppins;
-font-size: 60px;
+font-size: 50px;
 font-weight: 600;
 line-height: 58px;
 letter-spacing: 0em;
@@ -719,7 +719,34 @@ color: rgba(89, 89, 89, 1);
     .bankingsolutiondiv{
         flex-direction: column;
     }
+    .isslsolutionheader {
+        font-family: Poppins;
+        font-size: 35px;
+        font-weight: 600;
+        line-height: normal !important;
+        letter-spacing: 0em;
+        text-align: center;
+        color: rgba(255, 255, 255, 1);
+        text-align: start;
+        display: flex;
+        flex-direction: column;
+    }
 
+    .isslsolutionflex{
+        width: 100%;
+        min-height: 50vh;
+        display: flex;
+        gap: 15px;
+        justify-content: center;
+        align-items: center;
+        background: url(Rectangle\ 125\ \(1\).png);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: bottom;
+        /* background-blend-mode: darken; */
+    }
 
     .mybuttons{
         flex-direction: column;
@@ -844,14 +871,14 @@ color: rgba(89, 89, 89, 1);
 
     .isslsolutionheader{
 width: 100%;
-text-align: start;
+text-align: center;
 display: flex;
 flex-direction: column;
     }
 
     .isslsolutionbody{
 
-        text-align: start;
+        text-align: center;
     }
 
     .isslsolutiontext{

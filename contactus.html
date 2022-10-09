@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>integrated software services limited</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="solutions.css">
 </head>
@@ -256,7 +256,7 @@ explore our products.
 </div>
 <div class="bcontent"> 
 <p>
-    +2348091863306 
+    +2348092925955
 </p>
 
 </div>
@@ -271,47 +271,47 @@ explore our products.
             <div class="sideoftexting">
                  <div class="splitsidebody">
                    
-                    <form action="action.php" method="post">
+                    <form id="form">
     <div class="formbody">
 <div class="formcontent">
     <label for="">First Name</label>
-    <input type="text" name="name" id="">
+    <input type="text" name="from_name" id="from_name" required>
 </div>
 
 <div class="formcontent">
     <label for="">Last Name</label>
-    <input type="text" name="lastname" id="">
+    <input type="text" name="last_name" id="last_name" required>
 </div>
 
 <div class="formcontent">
     <label for="">Company Name</label>
-    <input type="text" name="companyname" id="">
+    <input type="text" name="company_name" id="company_name" required>
 </div>
 
 <div class="formcontent">
     <label for="">Company Email</label>
-    <input type="email" name="email" id="">
+    <input type="email" name="company_email" id="company_email" required>
 </div>
 
 <div class="formcontent">
     <label for="">Job Title</label>
-    <input type="text" name="jobtitle" id="">
+    <input type="text" name="job_title" id="job_title" required>
 </div>
 
 
 <div class="formcontent">
     <label for="">Business Type</label>
-    <input type="text" name="businesstype" id="">
+    <input type="text" name="business_type" id="business_type" required>
 </div>
 
 <div class="formcontent">
     <label for="">Message</label>
-    <textarea name="message" id="mytextarea" cols="30" rows="10">
-vee email testing 
+    <textarea name="message" id="message" cols="30" rows="10" required>
+
     </textarea>
 </div>
 
-<button type="submit"  class="submitting" value="">Send Message</button>
+<input type="submit" id="button" value="Send Email" class="submitting">
 <div class="button-area">
    
     <span></span>
@@ -346,8 +346,10 @@ vee email testing
     </div>
 </div>
     </div>
-
-
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+    <script type="text/javascript">
+        emailjs.init('iBesNGY246jXfWcY6')
+      </script>
 
 <script src="scrr.js"></script>
 
